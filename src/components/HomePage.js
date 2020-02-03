@@ -15,6 +15,9 @@ function HomePage() {
               <br />
               <br />
               <Link to="/registeration"><button>Register</button></Link>
+              <br />
+              <br />
+              <Link to="/addmeal"><button>Add Meal Test</button></Link>
             </div>
         </div>
         
