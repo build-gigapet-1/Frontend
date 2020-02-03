@@ -15,7 +15,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .mealList {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mealCard {
@@ -30,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 nav, .dashNav {
   background-color: #6C46A2;
   font-family: 'Patua One', cursive;
+  width: 100%;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -45,7 +47,15 @@ nav a, .dashNav a {
   color: white;
 }
 
+nav a:hover, .dashNav a:hover {
+  color: plum;
+}
+
 .dashNav img {
   width: 175px;
   margin-left: 5%;
+}
+
+.dashboard h2, .mealList h2 {
+  margin-top: 3%;
 }
