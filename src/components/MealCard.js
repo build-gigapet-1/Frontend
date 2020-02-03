@@ -1,14 +1,23 @@
 import React from 'react';
+import { Card, Button, CardHeader, CardFooter, CardBody,
+    CardTitle, CardText } from 'reactstrap';
 
 const MealCard = props => {
     return (
         <div className='mealCard'>
-            <h2>Date</h2>
-            <h3>Meal Type</h3>
-            <p>Fruits & Veggies: </p>
-            <p>Protein: </p>
-            <p>Grains: </p>
-            <p>Sweets: </p>
+            <Card body outline color ='secondary'>
+                <CardHeader>Date</CardHeader>
+                <CardBody>
+                    <CardTitle>Meal Type</CardTitle>
+                    <CardText>Fruits & Veggies: </CardText>
+                    <CardText>Protein: </CardText>
+                    <CardText>Grains: </CardText>
+                    <CardText>Sweets: </CardText>
+                    <Button className='cardBtn editBtn'>Edit</Button>
+                    <Button className='cardBtn deleteBtn'>Delete</Button>
+                </CardBody>
+                <CardFooter>Meal Score</CardFooter>
+            </Card>
         </div>
     )
 }
