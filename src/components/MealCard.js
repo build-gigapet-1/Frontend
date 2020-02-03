@@ -13,8 +13,8 @@ const MealCard = props => {
                     <CardText>Protein: </CardText>
                     <CardText>Grains: </CardText>
                     <CardText>Sweets: </CardText>
-                    <Button className='cardBtn editBtn'>Edit</Button>
-                    <Button className='cardBtn deleteBtn'>Delete</Button>
+                    <Button className='cardBtn'>Edit</Button>
+                    <Button className='cardBtn'>Delete</Button>
                 </CardBody>
                 <CardFooter>Meal Score</CardFooter>
             </Card>

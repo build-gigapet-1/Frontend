@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One|Questrial&display=swap');
+
 html, body {
   box-sizing: border-box;
+  font-family: 'Questrial', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Patua One', cursive;
 }
 
 .App {
@@ -12,10 +19,33 @@ html, body {
 }
 
 .mealCard {
-  width: 350px;
+  width: 375px;
 }
 
 .cardBtn {
-  width: 72px;
-  margin: 2% 4%;
+  width: 75px;
+  margin: 2% 5%;
+}
+
+nav, .dashNav {
+  background-color: #6C46A2;
+  font-family: 'Patua One', cursive;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  margin-right: 5%;
+}
+
+nav a, .dashNav a {
+  color: white;
+}
+
+.dashNav img {
+  width: 175px;
+  margin-left: 5%;
 }
