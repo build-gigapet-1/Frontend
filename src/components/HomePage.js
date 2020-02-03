@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
 
 function HomePage() {
     return (
       <div>
-        <h1>
-            Gigapet
-        </h1>
+        <NavBar />
         <div>
             <div>
               <h2>Create your own Gigapet</h2>
