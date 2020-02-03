@@ -1,0 +1,1 @@
+//This component should display the gigapet image and related stats.
