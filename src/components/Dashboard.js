@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBarDashboard from './NavBarDashboard';
 
-
 const Dashboard = props => {
     
     return (
