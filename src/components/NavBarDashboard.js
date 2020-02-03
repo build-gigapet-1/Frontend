@@ -5,7 +5,7 @@ import logo from '../logo.png';
 const NavBarDashboard = props => {
     return (
         <Nav className='dashNav'>
-            <img src={logo}/>
+            <a href='https://kkslider2130.github.io/Gigapet-Marketing-proto/#'><img src={logo} alt='logo'/></a>
             <div className='links'>
                 <NavItem>
                     <NavLink href="/dashboard">Dashboard</NavLink>
