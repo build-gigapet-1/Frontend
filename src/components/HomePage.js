@@ -9,7 +9,7 @@ import styled from "styled-components"
 
 let Body = styled.body`
 box-sizing: border-box;
-height: 100vh;
+/* height: 100vh; */
 /* background: #C9C8C8; */
 `;
 
@@ -22,29 +22,15 @@ display: flex;
 let Section = styled.section`
 width: 100%;
 margin: auto 0;
+/* height: 100vh; */
 `;
 
-let HeaderInnerContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-between;
-margin: 0 auto;
-max-width: 1440px;
+let TitleCont = styled.div`
 width: 100%;
-color: white;
-`;
-
-let Span = styled.span`
-color: white;
-font-size: 1.4rem;
-font-family: Hind Madurai;
-text-decoration: none;
-`;
-
-let Nav = styled.nav`
-width: 20%;
 display: flex;
-justify-content: space-between;
+flex-direction: column;;
+text-align: center;
+padding-top: 40px;
 `;
 
 let Buttons = styled.button`
@@ -85,21 +71,11 @@ margin: 0 auto;
 
 
 function HomePage() {
+
     return (
       <Body>
         <Header>
-          <div>
             <NavBar />
-          </div>
-          <HeaderInnerContainer className ='header-container'>
-            <h1>
-              Gigapet
-            </h1>
-            <Nav>
-              <Link to="/login" style={{textDecoration: 'none'}}><Span>Login</Span></Link>
-              <Link to="/registeration"style={{textDecoration: 'none'}}><Span>Register</Span></Link>
-            </Nav>
-          </HeaderInnerContainer>
         </Header>
         <Section>
             <div>
@@ -111,12 +87,9 @@ function HomePage() {
               <Links to="/registeration"><Buttons>Register</Buttons></Links>
             </ButtonContainer>
         </Section>
-        
-        
-       
       </Body>
     );
   }
   
   export default HomePage;
-  
+
