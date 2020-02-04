@@ -88,18 +88,7 @@ function HomePage() {
     return (
       <Body>
         <Header>
-          <div>
             <NavBar />
-          <div>
-          <HeaderInnerContainer className ='header-container'>
-            <h1>
-              Gigapet
-            </h1>
-            <Nav>
-              <Link to="/login" style={{textDecoration: 'none'}}><Span>Login</Span></Link>
-              <Link to="/registeration"style={{textDecoration: 'none'}}><Span>Register</Span></Link>
-            </Nav>
-          </HeaderInnerContainer>
         </Header>
         <Section>
             <div>
@@ -111,9 +100,6 @@ function HomePage() {
               <Links to="/registeration"><Buttons>Register</Buttons></Links>
             </ButtonContainer>
         </Section>
-        
-        
-       
       </Body>
     );
   }

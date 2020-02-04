@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axiosWithAuth from '../utils/axiosWithAuth';
+import axiosWithAuth from '../utils/AxiosWithAuth';
 import {useForm} from 'react-hook-form';
 
 const AddMeal = props => {
