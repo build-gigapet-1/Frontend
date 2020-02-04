@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarDashboard from './NavBarDashboard';
+import GigapetCard from './GigapetCard';
 
 const Dashboard = props => {
     
@@ -7,7 +8,7 @@ const Dashboard = props => {
         <div className='dashboard'>
             <NavBarDashboard />
             <h2>My Dashboard</h2>
-            <p>Gigapet will display here</p>
+            <GigapetCard />
         </div>
         
     )
