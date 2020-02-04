@@ -11,7 +11,7 @@ const NavBarDashboard = props => {
                     <NavLink href="/dashboard">Dashboard</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="#">Add Meal</NavLink>
+                    <NavLink href="/addmeal">Add Meal</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="/meals">View Meals</NavLink>
