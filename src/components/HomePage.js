@@ -33,29 +33,6 @@ text-align: center;
 padding-top: 40px;
 `;
 
-// let HeaderInnerContainer = styled.div`
-// display: flex;
-// align-items: center;
-// justify-content: space-between;
-// margin: 0 auto;
-// max-width: 1440px;
-// width: 100%;
-// color: white;
-// `;
-
-// let Span = styled.span`
-// color: white;
-// font-size: 1.4rem;
-// font-family: Hind Madurai;
-// text-decoration: none;
-// `;
-
-// let Nav = styled.nav`
-// width: 20%;
-// display: flex;
-// justify-content: space-between;
-// `;
-
 let Buttons = styled.button`
 width: 100%;
 height: 100px;
@@ -94,57 +71,25 @@ margin: 0 auto;
 
 
 function HomePage() {
-  return (
-    <Body>
-      <Header>
-          <NavBar />
-      </Header>
-      <Section>
-          <TitleCont>
-            <h2>Create your very own Gigapet</h2>
-            <h3>Get your kids eating healthy today!</h3>
-          </TitleCont>
-          <ButtonContainer className='log-reg-btn'>
-            <Links to="/login"><Buttons>Login</Buttons></Links>
-            <Links to="/registeration"><Buttons>Register</Buttons></Links>
-          </ButtonContainer>
-      </Section>
-    </Body>
-  );
-}
+
+    return (
+      <Body>
+        <Header>
+            <NavBar />
+        </Header>
+        <Section>
+            <div>
+              <h2>Create your very own Gigapet</h2>
+              <h3>Get your kids eating healthy today!</h3>
+            </div>
+            <ButtonContainer className='log-reg-btn'>
+              <Links to="/login"><Buttons>Login</Buttons></Links>
+              <Links to="/registeration"><Buttons>Register</Buttons></Links>
+            </ButtonContainer>
+        </Section>
+      </Body>
+    );
+  }
   
   export default HomePage;
-  
-  // function HomePage() {
-  //   return (
-  //     <Body>
-  //       <Header>
-  //         <div>
-  //           <NavBar />
-  //         </div>
-  //         <HeaderInnerContainer className ='header-container'>
-  //           <h1>
-  //             Gigapet
-  //           </h1>
-  //           <Nav>
-  //             <Link to="/login" style={{textDecoration: 'none'}}><Span>Login</Span></Link>
-  //             <Link to="/registeration"style={{textDecoration: 'none'}}><Span>Register</Span></Link>
-  //           </Nav>
-  //         </HeaderInnerContainer>
-  //       </Header>
-  //       <Section>
-  //           <div>
-  //             <h2>Create your very own Gigapet</h2>
-  //             <h3>Get your kids eating healthy today!</h3>
-  //           </div>
-  //           <ButtonContainer className='log-reg-btn'>
-  //             <Links to="/login"><Buttons>Login</Buttons></Links>
-  //             <Links to="/registeration"><Buttons>Register</Buttons></Links>
-  //           </ButtonContainer>
-  //       </Section>
-        
-        
-       
-  //     </Body>
-  //   );
-  // }
+
