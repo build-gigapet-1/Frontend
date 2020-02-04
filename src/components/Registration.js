@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import styled from "styled-components"
-import axiosWithAuth from '../utils/axiosWithAuth';
+import axiosWithAuth from '../utils/AxiosWithAuth';
 
 //==============================Styled Components===========================
 let Header = styled.header`
