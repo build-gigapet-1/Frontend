@@ -68,10 +68,10 @@ select {
   background-color: #6C46A2;
   border: none;
   color: white;
-  font-size: 20px;
+  font-size: 24px;
 }
 
-select-arrow {
+.select-selected:after {
   color: white;
 }
 /* dashboard styles */
@@ -115,7 +115,7 @@ select-arrow {
   }
 
   .customSelect {
-    margin-top: 5%;
+    margin-top: 4%;
   }
 
   .customSelect select {
