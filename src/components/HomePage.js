@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import NavBar from './NavBar';
+
+
 import styled from "styled-components"
 
 
-//==============================Styled Components===========================
 let Body = styled.body`
 box-sizing: border-box;
 height: 100vh;
@@ -79,12 +82,15 @@ display: flex;
 flex-direction: column;
 margin: 0 auto;
 `;
-//============================================
+
 
 function HomePage() {
     return (
       <Body>
         <Header>
+          <div>
+            <NavBar />
+          <div>
           <HeaderInnerContainer className ='header-container'>
             <h1>
               Gigapet
