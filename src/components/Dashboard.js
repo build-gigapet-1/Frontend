@@ -7,7 +7,6 @@ const Dashboard = props => {
     return (
         <div className='dashboard'>
             <NavBarDashboard />
-            <h2>My Dashboard</h2>
             <GigapetCard />
         </div>
         

@@ -1,21 +1,29 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
+import avatar from '../images/Group 17.png';
 
 const GigapetCard = (props) => {
-  return (
-    <div>
-      <Jumbotron>
-        <img src='' alt='gigapet'/>
-        <h1 className="display-3">Hello, world!</h1>
-        <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr className="my-2" />
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p className="lead">
-          <Button color="primary">Learn More</Button>
-        </p>
-      </Jumbotron>
-    </div>
-  );
+
+    const feedMe = e => {
+        window.location.href='/addmeal';
+    }
+
+    return (
+        <div className='gigapetCard'>
+        <Jumbotron> 
+            <img src={avatar} alt='gigapet'/>
+            <h1 className="display-3">Hello, User!</h1>
+            <p className="lead">Let's see how your Gigapet is doing today...</p>
+            <hr className="my-2" />
+            <h4>Gigapet Score:</h4>
+            <h4>100</h4>
+            <hr className="my-2" />
+            <p className="lead">
+          < Button color="success" type='submit' onClick={feedMe}>Feed Me</Button>
+            </p>
+        </Jumbotron>
+        </div>
+    );
 };
 
 export default GigapetCard;

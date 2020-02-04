@@ -90,7 +90,7 @@ function Login() {
     const { register, handleSubmit, errors } = useForm(); 
     const history = useHistory();
     const [userInfo, setUserInfo] = useState({
-        userName: '',
+        username: '',
         password: ''
     });
 
@@ -133,15 +133,15 @@ function Login() {
             <Form onSubmit={login} className="form">
               <div>
                 <Input
-                  name="userName" 
+                  name="username" 
                   ref={register({ required: true })} 
                   placeholder="User Name"
-                  value={userInfo.userName}
+                  value={userInfo.username}
                   onChange={handleChange}
                 />
                 <span/>
               </div>
-              {errors.userName && <p>You need a proper User Name to login!</p>}
+              {errors.username && <p>You need a proper User Name to login!</p>}
                 {/*
                   To Do: Add specific requirements for password
                 */}

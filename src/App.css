@@ -59,3 +59,20 @@ nav a:hover, .dashNav a:hover {
 .dashboard h2, .mealList h2 {
   margin-top: 3%;
 }
+
+.dashboard {
+  background-color: #E9ECEF;
+  height: 100vh;
+}
+
+.gigapetCard {
+  line-height: 3;
+}
+
+.display-3 {
+  margin-top: 2%;
+}
+
+.my-2 {
+  width: 400px;
+}
