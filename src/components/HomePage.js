@@ -90,7 +90,7 @@ function HomePage() {
         <Header>
           <div>
             <NavBar />
-          <div>
+          </div>
           <HeaderInnerContainer className ='header-container'>
             <h1>
               Gigapet

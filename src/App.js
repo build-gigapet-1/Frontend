@@ -7,6 +7,7 @@ import Registration from './components/Registration';
 import AddMeal from './components/AddMeal'
 import MealList from './components/MealList';
 import Dashboard from './components/Dashboard';
+import PrivateRoute from './utils/PrivateRoute';
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
       <div className="App">
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/registration" component={Registration} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/meals" component={MealList} />
-        <Route exact path="/addmeal" component={AddMeal} />
+        <Route exact path="/registeration" component={Registration} />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute exact path="/meals" component={MealList} />
+        <PrivateRoute exact path="/addmeal" component={AddMeal} />
       </div>
     </Router>
     

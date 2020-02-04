@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import styled from "styled-components"
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 //==============================Styled Components===========================
 let Header = styled.header`
@@ -81,7 +82,13 @@ function Registration() {
     const history = useHistory();
     const onSubmit = data => {
         console.log(data)
-        //history will be used in here
+        axiosWithAuth()
+              .post("/auth/register/", data)
+              .then(res => {
+                  console.log(res.data)
+                  history.push("/login")
+
+              } )
     }
   
     return (
@@ -103,31 +110,22 @@ function Registration() {
             <Form onSubmit={handleSubmit(onSubmit)} className="form">
                 <div>
                     <Input 
-                        name="first_name" 
+                        name="userName" 
                         ref={register({ required: true })} 
                         className="form-input"
-                        placeholder="First Name"
+                        placeholder="User Name"
                         />
                 </div>
-                {errors.first_name && <p>Enter your first name.</p>}
+                {errors.userName && <p>Enter your user name.</p>}
                 <div>
                     <Input 
-                        name="last_name" 
+                        name="phone" 
                         ref={register({ required: true })} 
                         className="form-input"
-                        placeholder="Last Name"
+                        placeholder="Phone Number"
                         />
                 </div>
-                {errors.last_name && <p>Enter your last name.</p>}
-                <div>
-                    <Input 
-                    name="email" 
-                    ref={register({ required: true })} 
-                    className="form-input"
-                    placeholder="Email"
-                    />
-                </div>
-                {errors.email && <p>You need a proper email to login!</p>}
+                {errors.phone && <p>Enter your phone number.</p>}
                 {/*
                   To Do: Add specific requirements for password
                 */}
@@ -140,8 +138,8 @@ function Registration() {
                     placeholder="Password"
                 />
                 </div>
-                {errors.password && <p>You need a password to login!</p>}
-                <Buttons type="submit" name="Login">Register</Buttons>
+                {errors.password && <p>You need a password to register!</p>}
+                <Buttons type="submit" name="Register">Register</Buttons>
   
             </Form>
             <br/>

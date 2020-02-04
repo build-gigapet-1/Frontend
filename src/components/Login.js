@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState}  from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
-import styled from "styled-components"
+import styled from "styled-components";
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 //==============================Styled Components===========================
 let Header = styled.header`
@@ -88,9 +89,31 @@ width: 100%;
 function Login() {
     const { register, handleSubmit, errors } = useForm(); 
     const history = useHistory();
-    const onSubmit = data => {
-        console.log(data)
-        //history will be used in here
+    const [userInfo, setUserInfo] = useState({
+        userName: '',
+        password: ''
+    });
+
+    const handleChange = e => {
+      setUserInfo({...userInfo,
+        [e.target.name]: e.target.value
+      
+      })}
+
+
+    const login = e => {
+
+        e.preventDefault();
+        console.log(userInfo);
+        axiosWithAuth()
+              .post('/auth/login/', userInfo)
+              .then(res => {
+                console.log(res)
+                localStorage.setItem('token', res.data.payload)
+                history.push('/dashboard')
+
+              })
+        
     }
     return (
       <div>
@@ -107,27 +130,29 @@ function Login() {
         </Header>
           <div>
             <h1>Login</h1>
-            <Form onSubmit={handleSubmit(onSubmit)} className="form">
+            <Form onSubmit={login} className="form">
               <div>
-                <Input className='input-email'
-                  name="email" 
+                <Input
+                  name="userName" 
                   ref={register({ required: true })} 
-                  className="form-input"
-                  placeholder="Email"
+                  placeholder="User Name"
+                  value={userInfo.userName}
+                  onChange={handleChange}
                 />
                 <span/>
               </div>
-              {errors.email && <p>You need a proper email to login!</p>}
+              {errors.userName && <p>You need a proper User Name to login!</p>}
                 {/*
                   To Do: Add specific requirements for password
                 */}
               <div>
-              <Input className='input-password'
+              <Input
                 name="password"
                 type="password"
                 ref={register({ required: true })}
-                className="form-input"
                 placeholder="Password"
+                value={userInfo.password}
+                onChange={handleChange}
               />
               </div>
               {errors.password && <p>You need a password to login!</p>}
