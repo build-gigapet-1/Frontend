@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
 import Registration from './components/Registration';
+import AddMeal from './components/AddMeal'
 import MealList from './components/MealList';
 import Dashboard from './components/Dashboard';
 
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/registration" component={Registration} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/meals" component={MealList} />
+        <Route exact path="/addmeal" component={AddMeal} />
       </div>
     </Router>
     
