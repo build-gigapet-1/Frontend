@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import avatar from '../images/Group 17.png';
 
 const GigapetCard = (props) => {
+    const [pet, setPet] = useState();
+    
+    // useEffect with get request for pet data
 
     const feedMe = e => {
         window.location.href='/addmeal';

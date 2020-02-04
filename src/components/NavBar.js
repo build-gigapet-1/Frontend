@@ -17,8 +17,18 @@ const NavBar = props => {
                     <NavLink href="/registration">Register</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="#">About Us</NavLink>
+                    <NavLink href="https://kkslider2130.github.io/Gigapet-Marketing-proto/team.html">Our Team</NavLink>
                 </NavItem>
+            </div>
+            <div className='customSelect'>
+                <select>
+                    <option value="" selected="selected">Menu</option> 
+                    <option value="/dashboard">Dashboard</option> 
+                    <option value="/addmeal">Add Meal</option> 
+                    <option value="/meals">View Meal</option> 
+                    <option value="/">Our Team</option> 
+                    <option value="/login">Sign Out</option>
+                </select>
             </div>
         </Nav>
     )
