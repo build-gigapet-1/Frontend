@@ -31,7 +31,7 @@ function App() {
     <Router>
       <div className="App">
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/login" component={Login} data={setUserID}/>
+        <Route exact path="/login" component={Login}/>
         <Route exact path="/registration" component={Registration} />
         <PrivateRoute exact path='/creategigapet' component={CreateGigapet} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
