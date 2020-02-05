@@ -140,13 +140,13 @@ function Registration() {
             <Form onSubmit={handleSubmit(onSubmit)} className="form">
                 <div>
                     <Input 
-                        name="userName" 
+                        name="username" 
                         ref={register({ required: true })} 
                         className="form-input"
                         placeholder="User Name"
                         />
                 </div>
-                {errors.userName && <p>Enter your user name.</p>}
+                {errors.username && <p>Enter your user name.</p>}
                 <div>
                     <Input 
                         name="phone" 
