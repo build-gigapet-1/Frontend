@@ -54,7 +54,7 @@ nav a:hover, .dashNav a:hover {
   color: plum;
 }
 
-.dashNav img {
+nav img, .dashNav img, .customSelect img {
   width: 175px;
   margin-left: 30%;
 }
@@ -63,7 +63,7 @@ nav a:hover, .dashNav a:hover {
   position: relative;
 }
 
-.customSelect select {
+.customSelect {
   display: none;
 }
 
@@ -72,11 +72,25 @@ select {
   border: none;
   color: white;
   font-size: 24px;
+  width: 150px;
 }
 
-.select-selected:after {
+.select-items div,.select-selected {
   color: white;
 }
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(108, 70, 162, .1);
+}
+
+.mr-2 {
+  color: white;
+}
+
+.toggleNav {
+  text-align: right;
+}
+
 /* dashboard styles */
 .dashboard h2, .mealList h2 {
   margin-top: 3%;
@@ -86,7 +100,17 @@ select {
   background-color: #E9ECEF;
   height: 100vh;
 }
+
+.dashboard .addPetBtn {
+  position: absolute;
+  right: 75px;
+  margin-top: 20px;
+}
 /* gigapet card styles */
+.jumbotron {
+  margin-bottom: 0;
+}
+
 .gigapetCard {
   line-height: 3;
 }
@@ -102,31 +126,44 @@ select {
 
 /* Media queries */
 @media (max-width: 500px) {
-  nav, .dashNav {
+  .navContainer {
+    background-color: #6C46A2;
+    font-family: 'Patua One', cursive;
+    width: 100%;
+    height: 150px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 150px;
   }
 
-  .links {
+  .dashNav {
     display: none;
   }
 
-  .dashNav img {
-    margin-left: 0;
+  .customSelect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .customSelect {
+  .customSelect img {
+    margin-left: 0;
+    margin-top: 10%;
+  }
+
+  select {
     margin-top: 4%;
   }
 
-  .customSelect select {
-    display: inline-block;
+  span.navbar-toggler-icon {
+    color: white;
   }
 
+  .show.navbar-collapse .dashnav {
+    height: 100%;
+  }
 }
-
+/* end media queries */
 .input-wrap{
   width: 20%;
   position: relative;
