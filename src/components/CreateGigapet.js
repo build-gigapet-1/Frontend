@@ -99,7 +99,7 @@ box-shadow: 1px 1px 3px black;
 `;
 
 
-function CreateGigapet() {
+function CreateGigapet(props) {
     // Carousel.propTypes ={  ride: PropTypes.oneOf(['carousel', false]),}
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -143,6 +143,8 @@ function CreateGigapet() {
           .post('/pets/', gigapet )
           .then(res=>{
             console.log(res)
+            setGigapet(res.data.payload)
+            props.history.push('/dashboard')
           }
           ).catch(err => console.log(err))
 

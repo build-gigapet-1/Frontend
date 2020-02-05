@@ -92,6 +92,12 @@ select {
   background-color: #E9ECEF;
   height: 100vh;
 }
+
+.dashboard .addPetBtn {
+  position: absolute;
+  right: 75px;
+  margin-top: 20px;
+}
 /* gigapet card styles */
 .jumbotron {
   margin-bottom: 0;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 import NavBarDashboard from './NavBarDashboard';
 import GigapetCard from './GigapetCard';
 
@@ -10,8 +11,8 @@ const Dashboard = props => {
     return (
         <div className='dashboard'>
             <NavBarDashboard />
+            <Button className='addPetBtn' onClick={onClick} color="success">Add a new Gigapet</Button>
             <GigapetCard />
-            <button type='submit' onClick={onClick}>Create a new Gigapet</button>
         </div>
         
     )

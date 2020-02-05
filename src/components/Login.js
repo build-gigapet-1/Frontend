@@ -136,7 +136,7 @@ function Login() {
               .post('/auth/login/', userInfo)
               .then(res => {
                 console.log(res)
-                localStorage.setItem('token', res.data.payload)
+                localStorage.setItem('token', res.data.token)
                 history.push('/dashboard')
 
               })
