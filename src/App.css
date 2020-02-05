@@ -83,6 +83,14 @@ select {
   background-color: rgba(108, 70, 162, .1);
 }
 
+.mr-2 {
+  color: white;
+}
+
+.toggleNav {
+  text-align: right;
+}
+
 /* dashboard styles */
 .dashboard h2, .mealList h2 {
   margin-top: 3%;
@@ -126,7 +134,6 @@ select {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
   }
 
   .dashNav {

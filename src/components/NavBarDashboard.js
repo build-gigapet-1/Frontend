@@ -42,11 +42,11 @@ const NavBarDashboard = props => {
                     <option value="/">Our Team</option> 
                     <option value="/login">Sign Out</option>
                 </select> */}
-                <Navbar className='mobileNav' color="faded" light>
+                <Navbar className='mobileNav' color="faded" dark>
                     <NavbarBrand href="/" className="mr-auto"><img src={logo} alt='logo'/></NavbarBrand>
-                    <NavbarToggler onClick={toggleNavbar} className="mr-2" color='light'/>
+                    <NavbarToggler onClick={toggleNavbar} className="mr-2" color='dark'/>
                     <Collapse isOpen={!collapsed} navbar>
-                        <Nav navbar>
+                        <Nav className='toggleNav' navbar>
                             <NavItem>
                                 <NavLink href="/dashboard">Dashboard</NavLink>
                             </NavItem>
