@@ -19,7 +19,6 @@ import {
 } from 'reactstrap';
 import axiosWithAuth from '../utils/AxiosWithAuth';
 
-
 const items = [
   {
     name: 'gorilla',
@@ -99,7 +98,7 @@ box-shadow: 1px 1px 3px black;
 `;
 
 
-function CreateGigapet(props) {
+function CreateGigapet() {
     // Carousel.propTypes ={  ride: PropTypes.oneOf(['carousel', false]),}
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -143,8 +142,6 @@ function CreateGigapet(props) {
           .post('/pets/', gigapet)
           .then(res=>{
             console.log(res)
-            setGigapet(res.data.payload)
-            props.history.push('/dashboard')
           }
           ).catch(err => console.log(err))
 
@@ -200,12 +197,12 @@ function CreateGigapet(props) {
             name='petImgSet'
             onChange={handleChange}
             >
-                <option value='gorilla' name='petImgSet' >Gorilla</option>
-                <option value='Shark' name='petImgSet' >Shark</option>
-                <option value='Crocodile' name='petImgSet'>Crocodile</option>
-                <option value='Parrot' name='petImgSet'>Parrot</option>
-                <option value='Snake' name='petImgSet'>Snake</option>
-                <option value='Deer' name='petImgSet'>Deer</option>
+                <option value='gorilla' name='petSetImg' >Gorilla</option>
+                <option value='Shark' name='petSetImg' >Shark</option>
+                <option value='Crocodile' name='petSetImg'>Crocodile</option>
+                <option value='Parrot' name='petSetImg'>Parrot</option>
+                <option value='Snake' name='petSetImg'>Snake</option>
+                <option value='Deer' name='petSetImg'>Deer</option>
             </select> 
             <br/>
             <Buttons type="submit" name="Register">Create Giga Pet</Buttons>
