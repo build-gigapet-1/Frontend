@@ -33,7 +33,7 @@ const AddMeal = props => {
     const addMeal = e => {
         //e.preventDefault();
         axiosWithAuth()
-            .get('/api/pets')
+            .get('/api/pets/')
             .then(res => {
                 console.log(res)
             }).catch(err => console.log(err));

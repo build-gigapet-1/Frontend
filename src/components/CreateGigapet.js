@@ -197,15 +197,15 @@ function CreateGigapet(props) {
             <br/>
             <select
             className='form-input'
-            name='petSetImg'
+            name='petImgSet'
             onChange={handleChange}
             >
-                <option value='gorilla' name='petSetImg' >Gorilla</option>
-                <option value='Shark' name='petSetImg' >Shark</option>
-                <option value='Crocodile' name='petSetImg'>Crocodile</option>
-                <option value='Parrot' name='petSetImg'>Parrot</option>
-                <option value='Snake' name='petSetImg'>Snake</option>
-                <option value='Deer' name='petSetImg'>Deer</option>
+                <option value='gorilla' name='petImgSet' >Gorilla</option>
+                <option value='Shark' name='petImgSet' >Shark</option>
+                <option value='Crocodile' name='petImgSet'>Crocodile</option>
+                <option value='Parrot' name='petImgSet'>Parrot</option>
+                <option value='Snake' name='petImgSet'>Snake</option>
+                <option value='Deer' name='petImgSet'>Deer</option>
             </select> 
             <br/>
             <Buttons type="submit" name="Register">Create Giga Pet</Buttons>
