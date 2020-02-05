@@ -1,3 +1,4 @@
+
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -12,6 +13,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import CreateGigapet from './components/CreateGigapet';
 
 function App() {
+
   const [pets, setPets] = useState();
 
   useEffect (() => {
@@ -29,7 +31,7 @@ function App() {
     <Router>
       <div className="App">
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login" component={Login} data={setUserID}/>
         <Route exact path="/registration" component={Registration} />
         <PrivateRoute exact path='/creategigapet' component={CreateGigapet} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />

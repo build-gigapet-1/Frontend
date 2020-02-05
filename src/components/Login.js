@@ -113,13 +113,14 @@ text-decoration: none;
 width: 50%;
 `;
 
-function Login() {
+const Login = props => {
     const { register, errors } = useForm(); 
     const history = useHistory();
     const [userInfo, setUserInfo] = useState({
         username: '',
         password: ''
     });
+    
 
     const handleChange = e => {
       setUserInfo({...userInfo,
@@ -132,11 +133,13 @@ function Login() {
 
         e.preventDefault();
         console.log(userInfo);
+        console.log(props)
         axiosWithAuth()
               .post('/auth/login/', userInfo)
               .then(res => {
                 localStorage.setItem('token', res.data.token)
                 history.push('/dashboard')
+                console.log(res)
 
               })
 
