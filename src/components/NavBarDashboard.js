@@ -3,27 +3,32 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 import logo from '../images/logo.png';
 
 const NavBarDashboard = props => {
+    
+
     return (
-        <Nav className='dashNav'>
-            <a href='https://kkslider2130.github.io/Gigapet-Marketing-proto/#'><img src={logo} alt='logo'/></a>
-            <div className='links'>
-                <NavItem>
-                    <NavLink href="/dashboard">Dashboard</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="/addmeal">Add Meal</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="/meals">View Meals</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="https://kkslider2130.github.io/Gigapet-Marketing-proto/team.html">Our Team</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="#">Sign Out</NavLink>
-                </NavItem>
-            </div>
+        <div className='navContainer'>
+            <Nav className='dashNav'>
+                <a href='https://kkslider2130.github.io/Gigapet-Marketing-proto/#'><img src={logo} alt='logo'/></a>
+                <div className='links'>
+                    <NavItem>
+                        <NavLink href="/dashboard">Dashboard</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/addmeal">Add Meal</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/meals">View Meals</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="https://kkslider2130.github.io/Gigapet-Marketing-proto/team.html">Our Team</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="#">Sign Out</NavLink>
+                    </NavItem>
+                </div>
+            </Nav>
             <div className='customSelect'>
+                <a href='https://kkslider2130.github.io/Gigapet-Marketing-proto/#'><img src={logo} alt='logo'/></a>
                 <select>
                     <option value="" selected="selected">Menu</option> 
                     <option value="/dashboard">Dashboard</option> 
@@ -33,7 +38,7 @@ const NavBarDashboard = props => {
                     <option value="/login">Sign Out</option>
                 </select>
             </div>
-        </Nav>
+        </div>
     )
 }
 

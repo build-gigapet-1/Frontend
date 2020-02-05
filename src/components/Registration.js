@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import styled from "styled-components"
 import axiosWithAuth from '../utils/AxiosWithAuth';
-import NavBar from './NavBar';
+import NavBar from "./NavBar";
 
 //==============================Styled Components===========================
 let Header = styled.header`
@@ -15,7 +15,7 @@ display: flex;
 let HeaderInnerContainer = styled.div`
 display: flex;
 align-items: center;
-justify-content: space-between;
+justify-content: space-around;
 margin: 0 auto;
 max-width: 1440px;
 width: 100%;
@@ -38,6 +38,7 @@ justify-content: space-between;
 let Input = styled.input`
 /* background: red; */
 /* border-radius: 25px; */
+width: 100%;
 font-size: 1.7rem;
 padding: 10px 30px;
 border: 2px solid black;
@@ -58,7 +59,8 @@ let Buttons = styled.button`
 width: 20%;
 background: #6C46A2;
 color: white;
-font-size: 1.5rem;
+font-size: 1.3rem;
+font-family: 'Patua One';
 margin: 1% 0;
 display: flex;
 flex-direction: column;
@@ -74,7 +76,41 @@ box-shadow: 1px 1px 3px black;
 }
 `;
 
+let Buttons2 = styled.button`
+width: 100%;
+background: #6C46A2;
+color: white;
+font-size: 1.3rem;
+font-family: 'Patua One';
+display: flex;
+flex-direction: column;
+align-items: center;
+border: 1px solid gray;
+cursor: pointer;
+text-shadow: 2px 2px black;
+box-shadow: 1px 1px 3px black;
+&:hover{
+  background: red;
+  opacity: .5;
+  box-shadow: 1px 1px 5px black;
+}
+`;
+
+let ButtonContainer = styled.div`
+width: 40%;
+margin: 0;
+display: flex;
+flex-direction: column;
+justify-items: center;
+justify-content: center;
+align-self: center;
+align-items: center;
+align-content: center;
+margin: 0 auto;
+`;
+
 let Links = styled(Link)`
+width: 50%;
 text-decoration: none;
 `;
 
@@ -95,13 +131,12 @@ function Registration() {
     return (
       <div>
         <Header>
-          <HeaderInnerContainer className ='header-container'>
-            <NavBar />
-          </HeaderInnerContainer>
+          <NavBar/>
         </Header>
           <div>
-
-            <h2>Registration</h2>
+          <br/>
+            <h1>Registration</h1>
+          <br/>
             <Form onSubmit={handleSubmit(onSubmit)} className="form">
                 <div>
                     <Input 
@@ -138,7 +173,9 @@ function Registration() {
   
             </Form>
             <br/>
-            <Links to="/"><Buttons>Go Back Home</Buttons></Links>
+            <ButtonContainer>
+              <Links to="/" style={{textDecoration: 'none'}}><Buttons2>Go Back Home</Buttons2></Links>
+            </ButtonContainer>
           </div>
       </div>
       
