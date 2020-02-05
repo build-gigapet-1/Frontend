@@ -141,7 +141,7 @@ function Login() {
                 />
                 <span/>
               </div>
-              {errors.userName && <p>You need a proper User Name to login!</p>}
+              {errors.username && <p>You need a proper User Name to login!</p>}
                 {/*
                   To Do: Add specific requirements for password
                 */}

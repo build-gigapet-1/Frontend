@@ -16,11 +16,11 @@ function App() {
       <div className="App">
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/registeration" component={Registration} />
+        <Route exact path="/registration" component={Registration} />
         <Route exact path='/creategigapet' component={CreateGigapet} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/meals" component={MealList} />
-        <Route exact path="/addmeal" component={AddMeal} />
+        <PrivateRoute exact path="/addmeal" component={AddMeal} />
       </div>
     </Router>
     

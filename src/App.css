@@ -14,13 +14,13 @@ h1, h2, h3, h4, h5, h6 {
 .App {
   text-align: center;
 }
-
+/* meal list styles */
 .mealList {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+/* meal card styles */
 .mealCard {
   width: 375px;
 }
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 75px;
   margin: 2% 5%;
 }
-
+/* nav styles */
 nav, .dashNav {
   background-color: #6C46A2;
   font-family: 'Patua One', cursive;
@@ -57,9 +57,73 @@ nav a:hover, .dashNav a:hover {
   width: 175px;
   margin-left: 30%;
 }
+/* custom select styles */
+.custom-select {
+  position: relative;
+}
 
+.customSelect select {
+  display: none;
+}
+
+select {
+  background-color: #6C46A2;
+  border: none;
+  color: white;
+  font-size: 24px;
+}
+
+.select-selected:after {
+  color: white;
+}
+/* dashboard styles */
 .dashboard h2, .mealList h2 {
   margin-top: 3%;
+}
+
+.dashboard {
+  background-color: #E9ECEF;
+  height: 100vh;
+}
+/* gigapet card styles */
+.gigapetCard {
+  line-height: 3;
+}
+
+.display-3 {
+  margin-top: 2%;
+  font-size: 60px;
+}
+
+.my-2 {
+  width: 400px;
+}
+
+/* Media queries */
+@media (max-width: 500px) {
+  nav, .dashNav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .dashNav img {
+    margin-left: 0;
+  }
+
+  .customSelect {
+    margin-top: 4%;
+  }
+
+  .customSelect select {
+    display: inline-block;
+  }
+
 }
 
 .input-wrap{
@@ -109,3 +173,4 @@ nav a:hover, .dashNav a:hover {
   width: 25%;
   height: 100px;
 }
+

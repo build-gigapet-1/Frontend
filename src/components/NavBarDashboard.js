@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-import logo from '../logo.png';
+import logo from '../images/logo.png';
 
 const NavBarDashboard = props => {
     return (
@@ -17,11 +17,21 @@ const NavBarDashboard = props => {
                     <NavLink href="/meals">View Meals</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="#">About Us</NavLink>
+                    <NavLink href="https://kkslider2130.github.io/Gigapet-Marketing-proto/team.html">Our Team</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="#">Sign Out</NavLink>
                 </NavItem>
+            </div>
+            <div className='customSelect'>
+                <select>
+                    <option value="" selected="selected">Menu</option> 
+                    <option value="/dashboard">Dashboard</option> 
+                    <option value="/addmeal">Add Meal</option> 
+                    <option value="/meals">View Meal</option> 
+                    <option value="/">Our Team</option> 
+                    <option value="/login">Sign Out</option>
+                </select>
             </div>
         </Nav>
     )
