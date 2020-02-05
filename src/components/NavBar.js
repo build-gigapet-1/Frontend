@@ -22,12 +22,11 @@ const NavBar = props => {
             </div>
             <div className='customSelect'>
                 <select>
-                    <option value="" selected="selected">Menu</option> 
-                    <option value="/dashboard">Dashboard</option> 
-                    <option value="/addmeal">Add Meal</option> 
-                    <option value="/meals">View Meal</option> 
-                    <option value="/">Our Team</option> 
-                    <option value="/login">Sign Out</option>
+                    <option value="https://kkslider2130.github.io/Gigapet-Marketing-proto/#" selected="selected">Menu</option> 
+                    <option value="/">Home</option> 
+                    <option value="/login">Log In</option> 
+                    <option value="/register">Register</option> 
+                    <option value="https://kkslider2130.github.io/Gigapet-Marketing-proto/team.html">Our Team</option> 
                 </select>
             </div>
         </Nav>

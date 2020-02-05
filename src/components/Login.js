@@ -29,11 +29,11 @@ font-family: Hind Madurai;
 text-decoration: none;
 `;
 
-let Nav = styled.nav`
-width: 20%;
-display: flex;
-justify-content: space-between;
-`;
+// let Nav = styled.nav`
+// width: 20%;
+// display: flex;
+// justify-content: space-between;
+// `;
 
 let Input = styled.input`
 /* background: red; */
@@ -136,7 +136,7 @@ function Login() {
               .post('/auth/login/', userInfo)
               .then(res => {
                 console.log(res)
-                localStorage.setItem('token', res.data.payload)
+                localStorage.setItem('token', res.data.token)
                 history.push('/dashboard')
 
               })
