@@ -33,16 +33,17 @@ const AddMeal = props => {
     const addMeal = e => {
         //e.preventDefault();
         axiosWithAuth()
-            .get('/api/pets/')
+            .get('/pets/')
             .then(res => {
                 console.log(res)
             }).catch(err => console.log(err));
+
       console.log(mealContents)
-      /*axiosWithAuth()
-            .post(`/api/pets/${}/meals`, mealContents)
+      axiosWithAuth()
+            .post(`/pets/${4}/meals`, mealContents)
             .then(res => {
                 console.log(res.data);
-            }).catch(err => console.log(err));*/
+            }).catch(err => console.log(err));
 
     }
 
@@ -56,6 +57,9 @@ const AddMeal = props => {
             <h1 className='add-h1'> Add Meal</h1>
             <CardBody>
             <form onSubmit={handleSubmit(addMeal)} className="form">
+
+                <CardTitle>Which gigapet do you want to add a meal for?</CardTitle>
+               
                 <CardTitle>Select the meal type</CardTitle>
                 <div className="meal-img-container">
                 <label>
