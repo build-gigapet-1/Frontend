@@ -9,8 +9,6 @@ import styled from "styled-components"
 
 let Body = styled.body`
 box-sizing: border-box;
-/* height: 100vh; */
-/* background: #C9C8C8; */
 `;
 
 let Header = styled.header`
@@ -78,13 +76,14 @@ function HomePage() {
             <NavBar />
         </Header>
         <Section>
-            <div>
+            <TitleCont>
               <h2>Create your very own Gigapet</h2>
               <h3>Get your kids eating healthy today!</h3>
-            </div>
+            </TitleCont>
             <ButtonContainer className='log-reg-btn'>
               <Links to="/login"><Buttons>Login</Buttons></Links>
               <Links to="/registeration"><Buttons>Register</Buttons></Links>
+              <Links to="/creategigapet"><Buttons>Gigapet</Buttons></Links>
             </ButtonContainer>
         </Section>
       </Body>

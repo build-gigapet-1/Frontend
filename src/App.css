@@ -100,5 +100,12 @@ nav a:hover, .dashNav a:hover {
 
   font-family: 'Fredoka One';
   color: #6C46A2;
+}
 
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  color: red;
+  background-color: red;
+  width: 25%;
+  height: 100px;
 }
