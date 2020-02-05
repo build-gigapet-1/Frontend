@@ -59,3 +59,14 @@ nav a:hover, .dashNav a:hover {
 .dashboard h2, .mealList h2 {
   margin-top: 3%;
 }
+
+.carousel-control-next, .carousel-control-prev{
+  /* background-color: chartreuse; */
+  /* opacity: 1; */
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  color: red;
+  background-color: red;
+width: 25%;
+height: 100px;
+}
