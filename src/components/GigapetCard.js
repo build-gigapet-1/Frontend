@@ -1,11 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import avatar from '../images/Group 17.png';
+import axiosWithAuth from '../utils/AxiosWithAuth';
 
 const GigapetCard = (props) => {
     const [pet, setPet] = useState();
     
-    // useEffect with get request for pet data
+    useEffect (() => {
+        axiosWithAuth()
+        .get('/api/pets')
+        .then(res => {
+            console.log(res)
+            // setPet state to res.data
+        })
+        .catch(err => console.log('Cannot fetch pets', err))
+    }, [])
 
     const feedMe = e => {
         window.location.href='/addmeal';
@@ -13,7 +22,8 @@ const GigapetCard = (props) => {
 
     return (
         <div className='gigapetCard'>
-        <Jumbotron> 
+        <Jumbotron>
+             {/*map through pets to display data  */}
             <img src={avatar} alt='gigapet'/>
             <h1 className="display-3">Hello, User!</h1>
             <p className="lead">Let's see how your Gigapet is doing today...</p>
