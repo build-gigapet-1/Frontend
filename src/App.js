@@ -8,6 +8,7 @@ import AddMeal from './components/AddMeal'
 import MealList from './components/MealList';
 import Dashboard from './components/Dashboard';
 import PrivateRoute from './utils/PrivateRoute';
+import CreateGigapet from './components/CreateGigapet';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/registration" component={Registration} />
+        <Route exact path='/creategigapet' component={CreateGigapet} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/meals" component={MealList} />
         <PrivateRoute exact path="/addmeal" component={AddMeal} />

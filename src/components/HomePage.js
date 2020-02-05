@@ -9,8 +9,6 @@ import styled from "styled-components"
 
 let Body = styled.body`
 box-sizing: border-box;
-/* height: 100vh; */
-/* background: #C9C8C8; */
 `;
 
 let Header = styled.header`
@@ -85,6 +83,7 @@ function HomePage() {
             <ButtonContainer className='log-reg-btn'>
               <Links to="/login"><Buttons>Login</Buttons></Links>
               <Links to="/registeration"><Buttons>Register</Buttons></Links>
+              <Links to="/creategigapet"><Buttons>Gigapet</Buttons></Links>
             </ButtonContainer>
         </Section>
       </Body>

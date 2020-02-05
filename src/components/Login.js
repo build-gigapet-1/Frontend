@@ -87,7 +87,7 @@ width: 100%;
 `;
 
 function Login() {
-    const { register, handleSubmit, errors } = useForm(); 
+    const { register, errors } = useForm(); 
     const history = useHistory();
     const [userInfo, setUserInfo] = useState({
         username: '',
