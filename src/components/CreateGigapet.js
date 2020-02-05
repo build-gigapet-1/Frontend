@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom';
-import NavBar from './NavBar';
+import NavBarDashboard from './NavBarDashboard';
 import {useForm} from 'react-hook-form';
 import styled from 'styled-components';
 import gigapet1 from '../images/gorilla.png';
@@ -17,6 +17,7 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
+
 
 const items = [
   {
@@ -138,7 +139,7 @@ function CreateGigapet() {
   return (
       <div>
         <Header>
-            <NavBar/>
+            <NavBarDashboard/>
         </Header>
         <h1 style={{margin: '2% 0'}}>Choose your GIGAPET</h1>
         <Carousel
@@ -160,7 +161,7 @@ function CreateGigapet() {
             placeholder='Enter your GIGA name'
             />
             <br/>
-            {/* <select
+            <select
             className='form-input'>
                 <option value='gorilla'>Gorilla</option>
                 <option value='gorilla'>Shark</option>
@@ -168,7 +169,7 @@ function CreateGigapet() {
                 <option value='gorilla'>Parrot</option>
                 <option value='gorilla'>Snake</option>
                 <option value='gorilla'>Deer</option>
-            </select> */}
+            </select>
             <br/>
             <Buttons type="submit" name="Register">Create Giga Pet</Buttons>
         </InputContainer>

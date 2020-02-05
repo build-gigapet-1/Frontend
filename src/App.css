@@ -142,7 +142,13 @@ select {
     margin-top: 4%;
   }
 
+  span.navbar-toggler-icon {
+    color: white;
+  }
 
+  .show.navbar-collapse .dashnav {
+    height: 100%;
+  }
 }
 /* end media queries */
 .input-wrap{
