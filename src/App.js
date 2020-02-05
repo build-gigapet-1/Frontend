@@ -20,7 +20,7 @@ function App() {
         <Route exact path='/creategigapet' component={CreateGigapet} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/meals" component={MealList} />
-        <PrivateRoute exact path="/addmeal" component={AddMeal} />
+        <Route exact path="/addmeal" component={AddMeal} />
       </div>
     </Router>
     

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Patua+One|Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+
 
 html, body {
   box-sizing: border-box;
@@ -60,13 +62,50 @@ nav a:hover, .dashNav a:hover {
   margin-top: 3%;
 }
 
-.carousel-control-next, .carousel-control-prev{
-  /* background-color: chartreuse; */
-  /* opacity: 1; */
+.input-wrap{
+  width: 20%;
+  position: relative;
+  background-color: #e6e6e6;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0;
+  box-sizing: border-box;
+  margin-bottom:1%;
 }
+
+.form-input{
+
+  color:#403866;
+  line-height: 1.2;
+  font-size: 20px;
+  display: block;
+  width: 65%;
+  background:transparent;
+  height: 62px;
+  padding: 0 20px 0 38px;
+  border:none;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal-img-container{
+  padding-bottom: 3%;
+}
+
+.add-h1{
+
+  font-family: 'Fredoka One';
+  color: #6C46A2;
+}
+
+
 .carousel-control-prev-icon, .carousel-control-next-icon{
   color: red;
   background-color: red;
-width: 25%;
-height: 100px;
+  width: 25%;
+  height: 100px;
 }

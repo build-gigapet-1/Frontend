@@ -87,10 +87,10 @@ width: 100%;
 `;
 
 function Login() {
-    const { register, handleSubmit, errors } = useForm(); 
+    const { register, errors } = useForm(); 
     const history = useHistory();
     const [userInfo, setUserInfo] = useState({
-        userName: '',
+        username: '',
         password: ''
     });
 
@@ -133,10 +133,10 @@ function Login() {
             <Form onSubmit={login} className="form">
               <div>
                 <Input
-                  name="userName" 
+                  name="username" 
                   ref={register({ required: true })} 
                   placeholder="User Name"
-                  value={userInfo.userName}
+                  value={userInfo.username}
                   onChange={handleChange}
                 />
                 <span/>
