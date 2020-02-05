@@ -56,7 +56,7 @@ box-shadow: 1px 1px 3px black;
 `;
 
 let Links = styled(Link)`
-text-decoration: none;
+  text-decoration:none;
 `;
 
 let ButtonContainer = styled.div`
@@ -81,9 +81,9 @@ function HomePage() {
               <h3>Get your kids eating healthy today!</h3>
             </TitleCont>
             <ButtonContainer className='log-reg-btn'>
-              <Links to="/login"><Buttons>Login</Buttons></Links>
-              <Links to="/registeration"><Buttons>Register</Buttons></Links>
-              <Links to="/creategigapet"><Buttons>Gigapet</Buttons></Links>
+              <Links to="/login" style={{textDecoration: 'none'}}><Buttons>Login</Buttons></Links>
+              <Links to="/registration" style={{textDecoration: 'none'}}><Buttons>Register</Buttons></Links>
+              <Links to="/creategigapet" style={{textDecoration: 'none'}}><Buttons>Gigapet</Buttons></Links>
             </ButtonContainer>
         </Section>
       </Body>
