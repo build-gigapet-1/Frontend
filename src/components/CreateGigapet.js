@@ -17,6 +17,7 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
+import axiosWithAuth from '../utils/AxiosWithAuth';
 
 
 const items = [
@@ -103,6 +104,13 @@ function CreateGigapet() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
     let {register, handleSubmit} = useForm();
+  const [gigapet,setGigapet] =useState({
+    petName: null,
+    petScore: '100',
+    petSetImg: 'Gorilla'
+
+  })
+
   const next = () => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
@@ -120,7 +128,28 @@ function CreateGigapet() {
     setActiveIndex(newIndex);
   }
 
+  const handleChange = e => {
+        console.log(e.target.name)
+        console.log(e.target.value)
+        setGigapet({
+            ...gigapet,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const addGigapet = e =>{
+      console.log(gigapet)
+      axiosWithAuth()
+          .post('/pets/', gigapet )
+          .then(res=>{
+            console.log(res)
+          }
+          ).catch(err => console.log(err))
+
+    }
+
   const slides = items.map((item) => {
+
     return (
       <CarouselItem
         onExiting={() => setAnimating(true)}
@@ -153,26 +182,33 @@ function CreateGigapet() {
             <CarouselControl className='controlCarousel' direction="prev" directionText="Previous" onClickHandler={previous} />
             <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
         </Carousel>
+        <form onSubmit={handleSubmit(addGigapet)}>
         <InputContainer>
             <input
-            name='gigaName'
+            name='petName'
             ref={register({ required: true })}
             className='form-input'
             placeholder='Enter your GIGA name'
+            value={gigapet.petName} 
+            onChange={handleChange}
             />
             <br/>
             <select
-            className='form-input'>
-                <option value='gorilla'>Gorilla</option>
-                <option value='gorilla'>Shark</option>
-                <option value='gorilla'>Crocodile</option>
-                <option value='gorilla'>Parrot</option>
-                <option value='gorilla'>Snake</option>
-                <option value='gorilla'>Deer</option>
-            </select>
+            className='form-input'
+            name='petSetImg'
+            onChange={handleChange}
+            >
+                <option value='gorilla' name='petSetImg' >Gorilla</option>
+                <option value='Shark' name='petSetImg' >Shark</option>
+                <option value='Crocodile' name='petSetImg'>Crocodile</option>
+                <option value='Parrot' name='petSetImg'>Parrot</option>
+                <option value='Snake' name='petSetImg'>Snake</option>
+                <option value='Deer' name='petSetImg'>Deer</option>
+            </select> 
             <br/>
             <Buttons type="submit" name="Register">Create Giga Pet</Buttons>
-        </InputContainer>
+          </InputContainer>
+        </form>
      </div>
   );
 }

@@ -16,6 +16,9 @@ const NavBarDashboard = props => {
                         <NavLink href="/dashboard">Dashboard</NavLink>
                     </NavItem>
                     <NavItem>
+                        <NavLink href="/creategigapet">Create Gigapet</NavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink href="/addmeal">Add Meal</NavLink>
                     </NavItem>
                     <NavItem>

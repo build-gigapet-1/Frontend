@@ -10,12 +10,8 @@ import Lunch from '../images/lunch.jpg';
 
 const AddMeal = props => {
 
-    const [meal,setMeal] = useState({
-        mealType: " ",
-        mealContents:" "
-    })
     const [mealContents,setMealContents] = useState({
-        
+        mealType: null,
         fruitsVeg: null,
         protein: null,
         grains: null,
@@ -26,21 +22,23 @@ const AddMeal = props => {
     const { register, handleSubmit, errors } = useForm(); 
 
     const handleChange = e => {
-        setMeal({
-            ...meal,
+        setMealContents({
+            ...mealContents,
             [e.target.name]: e.target.value
         })
     }
 
     const addMeal = e => {
-        e.preventDefault();
-
-        axiosWithAuth()
-            .post('/api/meals', meal)
+        //e.preventDefault();
+      console.log(mealContents)
+      /*axiosWithAuth()
+            .post(`/api/pets/${}/meals`, mealContents)
             .then(res => {
                 console.log(res.data);
-            }).catch(err => console.log(err));
+            }).catch(err => console.log(err));*/
+
     }
+
 
 
     return(
@@ -53,8 +51,30 @@ const AddMeal = props => {
             <form onSubmit={handleSubmit(addMeal)} className="form">
                 <CardTitle>Select the meal type</CardTitle>
                 <div className="meal-img-container">
+                <label>
+                    <input 
+                        type="radio" 
+                        name="mealType" 
+                        value="Breakfast"
+                        onChange={handleChange} 
+                        />
                     <img src={Breakfast} alt="Breakfast" />
+                </label>
+                <label>
+                    <input 
+                        type="radio" 
+                        name="mealType" 
+                        value="Lunch"
+                        onChange={handleChange} 
+                        />
                     <img src={Lunch} alt="Lunch" />
+                </label>
+                    <input 
+                        type="radio" 
+                        name="mealType" 
+                        value="Dinner"
+                        onChange={handleChange} 
+                        />
                     <img src='/images/lunch' alt="Dinner" />
                 </div>
                 <CardTitle>Servings of fruits and vegtables</CardTitle>
