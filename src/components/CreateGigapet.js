@@ -105,8 +105,8 @@ function CreateGigapet() {
     let {register, handleSubmit} = useForm();
   const [gigapet,setGigapet] =useState({
     petName: null,
-    petScore: '100',
-    petSetImg: 'Gorilla'
+    petScore: '9',
+    petImgSet: 'Gorilla'
 
   })
 
@@ -139,7 +139,7 @@ function CreateGigapet() {
     const addGigapet = e =>{
       console.log(gigapet)
       axiosWithAuth()
-          .post('/pets/', gigapet )
+          .post('/pets/', gigapet)
           .then(res=>{
             console.log(res)
           }

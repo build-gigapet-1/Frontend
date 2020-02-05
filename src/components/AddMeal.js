@@ -5,8 +5,10 @@ import { Card, Button, CardHeader, CardFooter, CardBody,
     CardTitle, CardText, Navbar } from 'reactstrap';
 import NavBarDashboard from './NavBarDashboard';
 import '../App.css';
+import './AddMeal.css'
 import Breakfast from '../images/breakfast.jpg';
 import Lunch from '../images/lunch.jpg';
+import Dinner from '../images/dinner.jpg';
 
 const AddMeal = props => {
 
@@ -16,7 +18,7 @@ const AddMeal = props => {
         protein: null,
         grains: null,
         sweets: null,
-        mealScore: null
+        mealScore: '8'
 
     })
     const { register, handleSubmit, errors } = useForm(); 
@@ -30,6 +32,11 @@ const AddMeal = props => {
 
     const addMeal = e => {
         //e.preventDefault();
+        axiosWithAuth()
+            .get('/api/pets')
+            .then(res => {
+                console.log(res)
+            }).catch(err => console.log(err));
       console.log(mealContents)
       /*axiosWithAuth()
             .post(`/api/pets/${}/meals`, mealContents)
@@ -59,6 +66,7 @@ const AddMeal = props => {
                         onChange={handleChange} 
                         />
                     <img src={Breakfast} alt="Breakfast" />
+                    <p>Breakfast</p>
                 </label>
                 <label>
                     <input 
@@ -68,14 +76,18 @@ const AddMeal = props => {
                         onChange={handleChange} 
                         />
                     <img src={Lunch} alt="Lunch" />
+                    <p>Lunch</p>
                 </label>
+                <label>
                     <input 
                         type="radio" 
                         name="mealType" 
                         value="Dinner"
                         onChange={handleChange} 
                         />
-                    <img src='/images/lunch' alt="Dinner" />
+                    <img src={Dinner} alt="Dinner" />
+                    <p>Dinner</p>
+                </label>
                 </div>
                 <CardTitle>Servings of fruits and vegtables</CardTitle>
                 <div className="input-wrap">
