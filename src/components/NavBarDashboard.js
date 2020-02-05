@@ -11,6 +11,9 @@ const NavBarDashboard = props => {
                     <NavLink href="/dashboard">Dashboard</NavLink>
                 </NavItem>
                 <NavItem>
+                    <NavLink href="/creategigapet">Create Gigapet</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink href="/addmeal">Add Meal</NavLink>
                 </NavItem>
                 <NavItem>
@@ -19,6 +22,7 @@ const NavBarDashboard = props => {
                 <NavItem>
                     <NavLink href="https://kkslider2130.github.io/Gigapet-Marketing-proto/team.html">Our Team</NavLink>
                 </NavItem>
+
                 <NavItem>
                     <NavLink href="#">Sign Out</NavLink>
                 </NavItem>
