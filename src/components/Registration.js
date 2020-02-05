@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import styled from "styled-components"
 import axiosWithAuth from '../utils/AxiosWithAuth';
+import NavBar from './NavBar';
 
 //==============================Styled Components===========================
 let Header = styled.header`
@@ -95,13 +96,7 @@ function Registration() {
       <div>
         <Header>
           <HeaderInnerContainer className ='header-container'>
-            <h1>
-              Gigapet
-            </h1>
-            <Nav>
-              <Link to="/login" style={{textDecoration: 'none'}}><Span>Login</Span></Link>
-              <Link to="/registeration"style={{textDecoration: 'none'}}><Span>Register</Span></Link>
-            </Nav>
+            <NavBar />
           </HeaderInnerContainer>
         </Header>
           <div>

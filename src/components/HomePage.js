@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import NavBar from './NavBar';
 
-
 import styled from "styled-components"
 
 
@@ -82,7 +81,7 @@ function HomePage() {
             </TitleCont>
             <ButtonContainer className='log-reg-btn'>
               <Links to="/login"><Buttons>Login</Buttons></Links>
-              <Links to="/registeration"><Buttons>Register</Buttons></Links>
+              <Links to="/registration"><Buttons>Register</Buttons></Links>
               <Links to="/creategigapet"><Buttons>Gigapet</Buttons></Links>
             </ButtonContainer>
         </Section>
