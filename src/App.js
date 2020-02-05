@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/registeration" component={Registration} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/meals" component={MealList} />
-        <PrivateRoute exact path="/addmeal" component={AddMeal} />
+        <Route exact path="/addmeal" component={AddMeal} />
       </div>
     </Router>
     

@@ -2,7 +2,7 @@ import React, {useState}  from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import styled from "styled-components";
-import axiosWithAuth from '../utils/axiosWithAuth';
+import axiosWithAuth from '../utils/AxiosWithAuth';
 
 //==============================Styled Components===========================
 let Header = styled.header`
@@ -87,10 +87,10 @@ width: 100%;
 `;
 
 function Login() {
-    const { register, handleSubmit, errors } = useForm(); 
+    const { register, errors } = useForm(); 
     const history = useHistory();
     const [userInfo, setUserInfo] = useState({
-        userName: '',
+        username: '',
         password: ''
     });
 
@@ -133,10 +133,10 @@ function Login() {
             <Form onSubmit={login} className="form">
               <div>
                 <Input
-                  name="userName" 
+                  name="username" 
                   ref={register({ required: true })} 
                   placeholder="User Name"
-                  value={userInfo.userName}
+                  value={userInfo.username}
                   onChange={handleChange}
                 />
                 <span/>
