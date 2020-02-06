@@ -41,7 +41,11 @@ function App() {
          component={Dashboard}
          render={(props) => <Dashboard {...props} pets={pets}/>}
         />
-        <PrivateRoute exact path="/meals" component={MealList} />
+        <PrivateRoute
+         exact path="/meals"
+         component={MealList}
+         render={(props) => < MealList {...props} pets={pets}/>}
+        />
         <PrivateRoute exact path="/addmeal" component={AddMeal} />
       </div>
     </Router>

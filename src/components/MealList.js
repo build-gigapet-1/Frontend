@@ -8,18 +8,36 @@ import axiosWithAuth from '../utils/AxiosWithAuth'
 
 const MealList = props => {
     const [meals, setMeals] = useState([]);
-
+    const [userId, setUserId] = useState('')
     useEffect(() =>{
-        axiosWithAuth()
-            .get(`/pets/`)
+        // console.log(props)
+        let id = 0;
+        // axiosWithAuth()
+        //     .get(`/pets/`)
+        //     .then(res => {
+        //         console.log(res);
+        //         setUserId(res.data[0].userId);
+        //         console.log(res.data[0].userId);
+        //         id = res.data[0].userId;
+
+        //     })
+        //     .catch(error => {
+        //         console.log('no meal found', error);
+        //     })
+        setTimeout(() => {
+            axiosWithAuth()
+            .get(`/pets/:petId/`)
             .then(res => {
-                console.log(res);
-                setMeals(res.data.meals);
-            })
+            console.log('second axios call', res);
+            setMeals(res.data.meals);
+        })
             .catch(error => {
-                console.log('no meal found', error);
-            })
+            console.log('no meal found', error);
+        })
+        }, 1000);
+
     }, []);
+    
 
     return (
         <div className="mealList">
@@ -27,7 +45,7 @@ const MealList = props => {
             <h2>My Meals</h2>
             <div className="mealList">
             <div>
-                {meals.map(meal => (
+                {/* {meals.map(meal => (
                     <MealCard 
                     key = {meal.mealId}
                     mealType = {meal.mealType}
@@ -37,7 +55,7 @@ const MealList = props => {
                     sweets = {meal.sweets}
                     mealScore = {meal.mealScore}
                     />
-                ))}
+                ))} */}
             </div>
         </div>
         </div>
