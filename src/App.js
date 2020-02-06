@@ -36,7 +36,9 @@ function App() {
         <PrivateRoute exact path='/creategigapet' component={CreateGigapet} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/meals" component={MealList} />
-        <PrivateRoute exact path="/addmeal" component={AddMeal} />
+        <PrivateRoute exact path="/addmeal" 
+                            component={AddMeal}
+                            render={(props) => <AddMeal {...props} pets={pets} />}/>
       </div>
     </Router>
     

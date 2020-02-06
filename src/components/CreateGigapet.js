@@ -145,6 +145,7 @@ function CreateGigapet() {
           }
           ).catch(err => console.log(err))
 
+
     }
 
   const slides = items.map((item) => {

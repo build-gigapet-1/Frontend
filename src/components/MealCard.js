@@ -1,10 +1,31 @@
 import React from 'react';
 import { Card, Button, CardHeader, CardFooter, CardBody,
     CardTitle, CardText } from 'reactstrap';
+import axiosWithAuth from '../utils/AxiosWithAuth';
 
 const MealCard = props => {
+    // edit meal function with axios.put
+    const editMeal = e => {
+        e.preventDefault()
+        axiosWithAuth()
+        .put(``)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => console.log('Cannot update', err))
+    }
+
     // delete meal function with axios.delete
-console.log(props)
+
+    const deleteMeal = meal => {
+        axiosWithAuth()
+        .delete(``)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => console.log('Cannot delete', err))
+    }
+    
     return (
         <div className='mealCard'>
             <Card body outline color ='secondary'>
