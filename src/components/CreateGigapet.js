@@ -99,7 +99,7 @@ box-shadow: 1px 1px 3px black;
 `;
 
 
-function CreateGigapet() {
+function CreateGigapet(props) {
     // Carousel.propTypes ={  ride: PropTypes.oneOf(['carousel', false]),}
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -111,6 +111,8 @@ function CreateGigapet() {
     petImgSet: 'Gorilla'
 
   })
+
+  const [pets, setPets] = useState();
 
   const next = () => {
     if (animating) return;
@@ -143,8 +145,11 @@ function CreateGigapet() {
       axiosWithAuth()
           .post('/pets/', gigapet)
           .then(res=>{
-            console.log(res)
+            console.log(res.data)
+            setGigapet(res.data)
+            window.location.href='/dashboard';
             history.push('/dashboard')
+
           }
           ).catch(err => console.log(err))
 
@@ -217,105 +222,3 @@ function CreateGigapet() {
 }
 
 export default CreateGigapet;
-
-// let Body = styled.body`
-// box-sizing: border-box;
-// `;
-
-// let Header = styled.header`
-// height: 120px;
-// background: #6C46A2;
-// display: flex;
-// `;
-
-// let Form = styled.form`
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// `;
-
-// let Buttons = styled.button`
-// width: 20%;
-// background: #6C46A2;
-// color: white;
-// font-size: 1.5rem;
-// margin: 1% 0;
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// border: 1px solid gray;
-// cursor: pointer;
-// text-shadow: 2px 2px black;
-// box-shadow: 1px 1px 3px black;
-// &:hover{
-//   background: red;
-//   opacity: .5;
-//   box-shadow: 1px 1px 5px black;
-// }
-// `;
-
-// let InputDisplay = styled.div`
-// display: flex;
-// `;
-
-// let InputCont = styled.div`
-// display: flex;
-// `;
-
-// let Input = styled.input`
-// height: 100px;
-// border: 1px solid red;
-// `;
-
-// function CreateGigapet(){
-//     let {register, handleSubmit} = useForm();
-    
-//     return (
-//         <Body>
-//             <Header>
-//                 <NavBar/>
-//             </Header>
-//             <form>
-//                 <InputDisplay>
-//                     <div className='input-container'>
-//                         <Input type='radio' />
-//                         <img src='../images/gorilla.png'/>
-//                     </div>
-//                     <div className='input-container'>
-//                         <Input type='radio' />
-//                         <img src='../images/gorilla.png'/>
-//                     </div>
-//                     <div className='input-container'>
-//                         <Input type='radio' />
-//                         <img src='../images/gorilla.png'/>
-//                     </div>
-//                     <div className='input-container'>
-//                         <Input type='radio' />
-//                         <img src='../images/gorilla.png'/>
-//                     </div>
-//                     <div className='input-container'>
-//                         <Input type='radio' />
-//                         <img src='../images/gorilla.png'/>
-//                     </div>
-//                     <div className='input-container'>
-//                         <Input type='radio' />
-//                         <img src='../images/gorilla.png'/>
-//                     </div>
-
-//                 </InputDisplay>
-//                 <div>
-//                     <input
-//                     name='gigaName'
-//                     ref={register({ required: true })}
-//                     className='form-input'
-//                     placeholder='Enter your GIGA name'
-//                     />
-//                     <Buttons type="submit" name="Register">Create Giga Pet</Buttons>
-//                 </div>
-//             </form>
-//         </Body>
-//     )
-    
-// }
-
-// export default CreateGigapet;

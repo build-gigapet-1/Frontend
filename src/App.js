@@ -16,6 +16,7 @@ function App() {
 
   const [pets, setPets] = useState();
 
+
    useEffect (() => {
         
      axiosWithAuth()
@@ -34,11 +35,13 @@ function App() {
         <Route exact path="/login" component={Login}/>
         <Route exact path="/registration" component={Registration} />
         <PrivateRoute exact path='/creategigapet' component={CreateGigapet} />
-        <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PrivateRoute exact path="/meals" 
-                            component={MealList} />
-        <PrivateRoute exact path="/addmeal" 
-                            component={AddMeal} />
+        <PrivateRoute
+         exact path="/dashboard"
+         component={Dashboard}
+         render={(props) => <Dashboard {...props} pets={pets}/>}
+        />
+        <PrivateRoute exact path="/meals" component={MealList} />
+        <PrivateRoute exact path="/addmeal" component={AddMeal} />
       </div>
     </Router>
     

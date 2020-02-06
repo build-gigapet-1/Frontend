@@ -96,28 +96,37 @@ select {
   margin-top: 3%;
 }
 
-.dashboard {
-  background-color: #E9ECEF;
-  height: 100vh;
-}
-
 .dashboard .addPetBtn {
   position: absolute;
   right: 75px;
   margin-top: 20px;
 }
+
+.gigapets {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 6% 3% 0;
+}
 /* gigapet card styles */
 .jumbotron {
-  margin-bottom: 0;
+  margin: 4% 2% 0;
+  width: 460px;
+  height: 800px;
+  border: 1px solid darkgray;
+}
+
+.jumbotron img {
+  width: 60%;
 }
 
 .gigapetCard {
   line-height: 3;
+  
 }
 
 .display-3 {
   margin-top: 2%;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .my-2 {
