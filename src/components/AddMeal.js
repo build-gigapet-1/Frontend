@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axiosWithAuth from '../utils/AxiosWithAuth';
 import {useForm} from 'react-hook-form';
 import { Card, Button, CardHeader, CardFooter, CardBody,
@@ -11,8 +11,9 @@ import Lunch from '../images/lunch.jpg';
 import Dinner from '../images/dinner.jpg';
 
 const AddMeal = props => {
-
+    const [pets,setPets] = useState([])
     const [mealContents,setMealContents] = useState({
+        petId: null,
         mealType: null,
         fruitsVeg: null,
         protein: null,
@@ -23,40 +24,48 @@ const AddMeal = props => {
     })
     const { register, handleSubmit, errors } = useForm(); 
 
+    useEffect(() => {
+        axiosWithAuth()
+            .get('/pets/')
+            .then(res => {
+                setPets(res.data);
+     })
+     .catch(err => console.log('Cannot fetch pets', err))
+
+    }, [])
+
     const handleChange = e => {
         setMealContents({
             ...mealContents,
             [e.target.name]: e.target.value
         })
     }
-
     const addMeal = e => {
         //e.preventDefault();
-
-      console.log(mealContents)
+        console.log(mealContents)
       axiosWithAuth()
-            .post(`/pets/${props.userID}/meals`, mealContents)
+            .post(`/pets/${mealContents.petId}/meals`, mealContents)
             .then(res => {
                 console.log(res.data);
             }).catch(err => console.log(err));
 
     }
 
-
-
     return(
 
         <div className="mealForm">
         <NavBarDashboard/>
-        <Card body outline color ='secondary'>
-            <h1 className='add-h1'> Add Meal</h1>
+            <Card body outline color ='secondary'>
+            <h1 className='add-h1'> Add a Meal</h1>
             <CardBody>
             <form onSubmit={handleSubmit(addMeal)} className="form">
 
                 <CardTitle>Which gigapet do you want to add a meal for?</CardTitle>
-                
-               
-               {   console.log(props) }
+                <select name="petId" onChange={handleChange}>
+                { pets.map(pet => (
+                    <option name="petId" value={pet.petId}> {pet.petName} </option>
+                ))}
+                </select>
                 <CardTitle>Select the meal type</CardTitle>
                 <div className="meal-img-container">
                 <label>
@@ -137,9 +146,9 @@ const AddMeal = props => {
                 {errors.sweets && <p>Enter your sweets servings.</p>}
                 <Button color="success" type="submit" name="Add Meal">Add Meal</Button>
   
-            </form>
-            </CardBody>
-        </Card>
+                </form>
+                </CardBody>
+            </Card>
         </div>
 
     )
