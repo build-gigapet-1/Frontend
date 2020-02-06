@@ -11,10 +11,10 @@ const MealList = props => {
 
     useEffect(() =>{
         axiosWithAuth()
-            .get(`/pets/`)
+            .get(`/pets/7/meals`)
             .then(res => {
                 console.log(res);
-                setMeals(res.data.meals);
+                setMeals(res.data);
             })
             .catch(error => {
                 console.log('no meal found', error);
@@ -27,7 +27,7 @@ const MealList = props => {
             <h2>My Meals</h2>
             <div className="mealList">
             <div>
-                {meals.map(meal => (
+                {/* {meals.map(meal => (
                     <MealCard 
                     key = {meal.mealId}
                     mealType = {meal.mealType}
@@ -37,7 +37,8 @@ const MealList = props => {
                     sweets = {meal.sweets}
                     mealScore = {meal.mealScore}
                     />
-                ))}
+                ))} */}
+                <MealCard />
             </div>
         </div>
         </div>
