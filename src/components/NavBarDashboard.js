@@ -33,15 +33,6 @@ const NavBarDashboard = props => {
                 </div>
             </Nav>
             <div className='customSelect'>
-                {/* <a href='https://kkslider2130.github.io/Gigapet-Marketing-proto/#'><img src={logo} alt='logo'/></a>
-                <select>
-                    <option value="" selected="selected">Menu</option> 
-                    <option value="/dashboard">Dashboard</option> 
-                    <option value="/addmeal">Add Meal</option> 
-                    <option value="/meals">View Meal</option> 
-                    <option value="/">Our Team</option> 
-                    <option value="/login">Sign Out</option>
-                </select> */}
                 <Navbar className='mobileNav' color="faded" dark>
                     <NavbarBrand href="/" className="mr-auto"><img src={logo} alt='logo'/></NavbarBrand>
                     <NavbarToggler onClick={toggleNavbar} className="mr-2" color='dark'/>

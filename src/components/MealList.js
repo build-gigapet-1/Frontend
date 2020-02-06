@@ -53,7 +53,7 @@ const MealList = props => {
             <div>
                 {meals.map(meal => (
                     <MealCard 
-                    key = {meal.mealId}
+                    mealId = {meal.mealId}
                     date = {meal.date}
                     mealType = {meal.mealType}
                     fruitsVeg = {meal.fruitsVeg}
