@@ -73,7 +73,7 @@ const MealCard = props => {
                         <ModalBody>
                         <Form onSubmit={editMeal}>
                             <Label for="mealType">Meal Type</Label>
-                            <Input type="select" name="mealType" id="mealType">
+                            <Input type="select" name="mealType" id="mealType" onChange={changeHandler}>
                                 <option value='Breakfast'>Breakfast</option>
                                 <option value='Lunch'>Lunch</option>
                                 <option value='Dinnert'>Dinner</option>
