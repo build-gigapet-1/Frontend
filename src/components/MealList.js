@@ -54,6 +54,7 @@ const MealList = props => {
                 {meals.map(meal => (
                     <MealCard 
                     key = {meal.mealId}
+                    date = {meal.date}
                     mealType = {meal.mealType}
                     fruitsVeg = {meal.fruitsVeg}
                     protein = {meal.protein}
