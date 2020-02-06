@@ -98,7 +98,7 @@ box-shadow: 1px 1px 3px black;
 `;
 
 
-function CreateGigapet() {
+function CreateGigapet(props) {
     // Carousel.propTypes ={  ride: PropTypes.oneOf(['carousel', false]),}
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -109,6 +109,8 @@ function CreateGigapet() {
     petImgSet: 'Gorilla'
 
   })
+
+  const [pets, setPets] = useState();
 
   const next = () => {
     if (animating) return;
@@ -141,7 +143,8 @@ function CreateGigapet() {
       axiosWithAuth()
           .post('/pets/', gigapet)
           .then(res=>{
-            console.log(res)
+            console.log(res.data)
+            setGigapet(res.data)
           }
           ).catch(err => console.log(err))
 
