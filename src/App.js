@@ -16,16 +16,17 @@ function App() {
 
   const [pets, setPets] = useState();
 
-  useEffect (() => {
+
+   useEffect (() => {
         
-    axiosWithAuth()
-    .get('/pets/')
-    .then(res => {
-        console.log(res.data)
-        setPets(res.data)
-    })
-    .catch(err => console.log('Cannot fetch pets', err))
-}, [])
+     axiosWithAuth()
+     .get('/pets/')
+     .then(res => {
+       console.log(res.data);
+       setPets(res.data);
+     })
+     .catch(err => console.log('Cannot fetch pets', err))
+ }, [])
 
   return (
     <Router>
@@ -40,9 +41,7 @@ function App() {
          render={(props) => <Dashboard {...props} pets={pets}/>}
         />
         <PrivateRoute exact path="/meals" component={MealList} />
-        <PrivateRoute exact path="/addmeal" 
-                            component={AddMeal}
-                            render={(props) => <AddMeal {...props} pets={pets} />}/>
+        <PrivateRoute exact path="/addmeal" component={AddMeal} />
       </div>
     </Router>
     
