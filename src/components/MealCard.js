@@ -8,7 +8,7 @@ const MealCard = props => {
         buttonLabel,
         className
       } = props;
-    
+      console.log(props)
       const [modal, setModal] = useState(false);
     
       const toggle = () => setModal(!modal);
