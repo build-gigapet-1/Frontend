@@ -11,7 +11,7 @@ const MealList = props => {
 
     useEffect(() =>{
         axiosWithAuth()
-            .get(`https://gigapet-1.herokuapp.com/api/pets/`)
+            .get(`/pets/`)
             .then(res => {
                 console.log(res);
                 setMeals(res.data.meals);

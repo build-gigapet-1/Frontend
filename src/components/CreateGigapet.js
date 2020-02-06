@@ -9,6 +9,7 @@ import gigapet3 from '../images/omgomg.png';
 import gigapet4 from '../images/parrot.png';
 import gigapet5 from '../images/snekk.png';
 import gigapet6 from '../images/deer.png';
+import {useHistory } from 'react-router-dom';
 
 import {
   Carousel,
@@ -103,6 +104,7 @@ function CreateGigapet() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
     let {register, handleSubmit} = useForm();
+    const history = useHistory();
   const [gigapet,setGigapet] =useState({
     petName: null,
     petScore: '9',
@@ -142,6 +144,7 @@ function CreateGigapet() {
           .post('/pets/', gigapet)
           .then(res=>{
             console.log(res)
+            history.push('/dashboard')
           }
           ).catch(err => console.log(err))
 
@@ -185,18 +188,18 @@ function CreateGigapet() {
         <form onSubmit={handleSubmit(addGigapet)}>
         <InputContainer>
             <input
-            name='petName'
-            ref={register({ required: true })}
-            className='form-input'
-            placeholder='Enter your GIGA name'
-            value={gigapet.petName} 
-            onChange={handleChange}
+              name='petName'
+              ref={register({ required: true })}
+              className='form-input'
+              placeholder='Enter your GIGA name'
+              value={gigapet.petName} 
+              onChange={handleChange}
             />
             <br/>
             <select
-            className='form-input'
-            name='petImgSet'
-            onChange={handleChange}
+              className='form-input'
+              name='petImgSet'
+              onChange={handleChange}
             >
                 <option value='gorilla' name='petSetImg' >Gorilla</option>
                 <option value='Shark' name='petSetImg' >Shark</option>
