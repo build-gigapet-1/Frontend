@@ -13,24 +13,24 @@ const MealList = props => {
 
         // console.log(props)
         let id = 0;
-        // axiosWithAuth()
-        //     .get(`/pets/`)
-        //     .then(res => {
-        //         console.log(res);
-        //         setUserId(res.data[0].userId);
-        //         console.log(res.data[0].userId);
-        //         id = res.data[0].userId;
+        axiosWithAuth()
+            .get(`/pets/`)
+            .then(res => {
+                console.log(res);
+                setUserId(res.data[0].petId);
+                console.log(res.data[0].petId);
+                id = res.data[0].petId;
 
-        //     })
-        //     .catch(error => {
-        //         console.log('no meal found', error);
-        //     })
+            })
+            .catch(error => {
+                console.log('no meal found', error);
+            })
       
             axiosWithAuth()
-            .get(`/pets/1/meals`)
+            .get(`/pets/3`)
             .then(res => {
             console.log('second axios call', res);
-            setMeals(res.data.meals);
+            // setMeals(res.data.meals);
         }).catch(error => {
             console.log('no meal found', error);
         })
@@ -55,6 +55,7 @@ const MealList = props => {
                     mealScore = {meal.mealScore}
                     />
                 ))} */}
+                <MealCard />
             </div>
         </div>
         </div>
