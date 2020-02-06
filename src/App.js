@@ -11,6 +11,7 @@ import MealList from './components/MealList';
 import Dashboard from './components/Dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 import CreateGigapet from './components/CreateGigapet';
+import Feedgigapet from './components/FeedGigapet';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
          render={(props) => < MealList {...props} pets={pets}/>}
         />
         <PrivateRoute exact path="/addmeal" component={AddMeal} />
+        <PrivateRoute exact path='/feedgigapet' component={Feedgigapet} />
       </div>
     </Router>
     

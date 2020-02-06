@@ -10,6 +10,7 @@ const MealList = props => {
     const [meals, setMeals] = useState([]);
     const [userId, setUserId] = useState('')
     useEffect(() =>{
+
         // console.log(props)
         let id = 0;
         // axiosWithAuth()
@@ -24,17 +25,15 @@ const MealList = props => {
         //     .catch(error => {
         //         console.log('no meal found', error);
         //     })
-        setTimeout(() => {
+      
             axiosWithAuth()
-            .get(`/pets/:petId/`)
+            .get(`/pets/1/meals`)
             .then(res => {
             console.log('second axios call', res);
             setMeals(res.data.meals);
-        })
-            .catch(error => {
+        }).catch(error => {
             console.log('no meal found', error);
         })
-        }, 1000);
 
     }, []);
     
