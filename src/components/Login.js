@@ -115,9 +115,8 @@ const Login = props => {
               .post('/auth/login/', userInfo)
               .then(res => {
                 localStorage.setItem('token', res.data.token)
-                props.history.push('/dashboard')
+                history.push('/dashboard')
                 console.log(res)
-
               })
 
     }

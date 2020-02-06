@@ -145,6 +145,7 @@ function CreateGigapet(props) {
           .then(res=>{
             console.log(res.data)
             setGigapet(res.data)
+            window.location.href='/dashboard';
           }
           ).catch(err => console.log(err))
 

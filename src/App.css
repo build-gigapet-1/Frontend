@@ -115,6 +115,10 @@ select {
   border: 1px solid darkgray;
 }
 
+.jumbotron img {
+  width: 60%;
+}
+
 .gigapetCard {
   line-height: 3;
   
@@ -122,7 +126,7 @@ select {
 
 .display-3 {
   margin-top: 2%;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .my-2 {
