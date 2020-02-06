@@ -8,43 +8,50 @@ import axiosWithAuth from '../utils/AxiosWithAuth'
 
 const MealList = props => {
     const [meals, setMeals] = useState([]);
-    const [userId, setUserId] = useState('')
+    const [pets,setPets] = useState([])
     useEffect(() =>{
 
-        // console.log(props)
-        let id = 0;
-        // axiosWithAuth()
-        //     .get(`/pets/`)
-        //     .then(res => {
-        //         console.log(res);
-        //         setUserId(res.data[0].userId);
-        //         console.log(res.data[0].userId);
-        //         id = res.data[0].userId;
+        axiosWithAuth()
+                .get('/pets/')
+                .then(res => {
+                    setPets(res.data);
 
-        //     })
-        //     .catch(error => {
-        //         console.log('no meal found', error);
-        //     })
+        })
+        .catch(err => console.log('Cannot fetch pets', err))
       
-            axiosWithAuth()
-            .get(`/pets/1/meals`)
+       
+    }, []);
+
+    const getMeals= e => {
+
+        console.log(e.target.value)
+        axiosWithAuth()
+            .get(`/pets/${e.target.value}`)
             .then(res => {
-            console.log('second axios call', res);
+            console.log(res);
             setMeals(res.data.meals);
         }).catch(error => {
             console.log('no meal found', error);
         })
 
-    }, []);
+
+    }
     
 
     return (
         <div className="mealList">
             <NavBarDashboard />
+            <h2>Which gigapets meals do you want to view?</h2>
+                <select name="petId" onChange={getMeals}>
+                    <option>Select Pet</option>
+                { pets.map(pet => (
+                    <option name="petId" value={pet.petId}> {pet.petName} </option>
+                ))}
+                </select>
             <h2>My Meals</h2>
             <div className="mealList">
             <div>
-                {/* {meals.map(meal => (
+                {meals.map(meal => (
                     <MealCard 
                     key = {meal.mealId}
                     mealType = {meal.mealType}
@@ -54,7 +61,7 @@ const MealList = props => {
                     sweets = {meal.sweets}
                     mealScore = {meal.mealScore}
                     />
-                ))} */}
+                )) }
             </div>
         </div>
         </div>
