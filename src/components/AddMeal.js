@@ -30,7 +30,6 @@ const AddMeal = props => {
             .then(res => {
                 setPets(res.data);
                 console.log(res.data[0].petId)
-
      })
      .catch(err => console.log('Cannot fetch pets', err))
 
@@ -48,8 +47,9 @@ const AddMeal = props => {
             .post(`/pets/${mealContents.petId}/meals`, mealContents)
             .then(res => {
                 console.log(res)
-                window.location.href='/meals'
+                window.location.href='/dashboard'
             }).catch(err => console.log(err));
+            
       
      }
 
