@@ -48,6 +48,7 @@ const AddMeal = props => {
             .post(`/pets/${mealContents.petId}/meals`, mealContents)
             .then(res => {
                 console.log(res)
+                window.location.href='/meals'
             }).catch(err => console.log(err));
       
      }
