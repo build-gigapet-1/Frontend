@@ -5,7 +5,7 @@ import GigapetCard from './GigapetCard';
 import axiosWithAuth from '../utils/AxiosWithAuth';
 
 const Dashboard = props => {
-    const [pets, setPets] = useState();
+    const [pets, setPets] = useState([]);
 
     useEffect (() => {
         console.log(props)
@@ -26,12 +26,17 @@ const Dashboard = props => {
         <div className='dashboard'>
             <NavBarDashboard />
             <Button className='addPetBtn' onClick={onClick} color="success">Add a new Gigapet</Button>
-            {/* {pets.map(pet => (
-                <GigapetCard
-                 key={pet.id}
-                 petName={pet.petName}
-                />
-            ))} */}
+            <div className='gigapets'>
+                {pets.map(pet => (
+                    <GigapetCard
+                    key={pet.petId}
+                    petName={pet.petName}
+                    petScore={pet.petScore}
+                    petImgSet={pet.petImgSet}
+                    />
+            ))}
+            </div>
+            
             
         </div>
         

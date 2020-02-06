@@ -117,7 +117,6 @@ const Login = props => {
                 localStorage.setItem('token', res.data.token)
                 history.push('/dashboard')
                 console.log(res)
-
               })
 
     }
