@@ -81,9 +81,10 @@ const MealCard = props => {
                         <Form onSubmit={editMeal}>
                             <Label for="mealType">Meal Type</Label>
                             <Input type="select" name="mealType" id="mealType" onChange={changeHandler}>
+                                <option value=''>{props.mealType}</option>
                                 <option value='Breakfast'>Breakfast</option>
                                 <option value='Lunch'>Lunch</option>
-                                <option value='Dinnert'>Dinner</option>
+                                <option value='Dinner'>Dinner</option>
                             </Input>
                             <FormGroup>
                                 <Label for="fruitsVeg">Fruits & Veggies</Label>
