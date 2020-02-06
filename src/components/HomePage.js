@@ -31,14 +31,10 @@ display: flex;
 
 let Section = styled.section`
 display: flex;
-/* justify-content: center; */
 align-content: center;
 text-align: center;
 width: 100%;
 padding-top: 5%;
-/* margin: 5% 0; */
-/* margin-top: 15%; */
-/* margin-left: 8%; */
 position: relative;
 `;
 
@@ -46,7 +42,6 @@ let ImgTitleCont = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-/* align-content: flex-end; */
 width: 100%;
 padding-left: 150px;
 `;
@@ -82,14 +77,13 @@ color: rgba(255,163,128);
 `;
 
 let Buttons = styled.button`
-width: 40%;
+width: 100%;
 height: 70px;
 background: #6C46A2;
 color: white;
 font-size: 2rem;
 font-family: 'Patua One';
 margin: 2% 0;
-margin-right: 50%;
 border: 1px solid gray;
 cursor: pointer;
 text-shadow: 2px 2px black;
@@ -100,8 +94,9 @@ box-shadow: 1px 1px 3px black;
   box-shadow: 1px 1px 5px black;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1026px) {
   width: 100%;
+  height: 50px;
   margin-right: 0;
 }
 `;
@@ -110,7 +105,8 @@ let Links = styled(Link)`
   text-decoration:none;
   display: flex;
   justify-content: center;
-  width: 250px;
+  /* width: 250px; */
+  width: 40%;
 `;
 
 let ButtonContainer = styled.div`
@@ -122,12 +118,12 @@ flex-direction: column;
 margin: auto 0;
 margin-bottom: 17%;
 align-content: center;
-@media (max-width: 1024px) {
-  width: 100%;
+/* @media (max-width: 1024px) {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  }
+  } */
 `;
 
 
