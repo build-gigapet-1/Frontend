@@ -26,6 +26,13 @@ const MealCard = props => {
     const {id} = useParams();
     console.log('this is props', props)
 
+    useEffect(() => {
+        const mealToEdit = props
+        if (mealToEdit) {
+            setMeal(mealToEdit)
+        }
+    }, [props])
+
     const changeHandler = e => {
         setMeal({
             ...meal,
