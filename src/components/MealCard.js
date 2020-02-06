@@ -16,6 +16,7 @@ const MealCard = props => {
     }
 
     // delete meal function with axios.delete
+
     const deleteMeal = meal => {
         axiosWithAuth()
         .delete(``)
@@ -24,21 +25,21 @@ const MealCard = props => {
         })
         .catch(err => console.log('Cannot delete', err))
     }
-
+    
     return (
         <div className='mealCard'>
             <Card body outline color ='secondary'>
                 <CardHeader>Date</CardHeader>
                 <CardBody>
-                    <CardTitle>Meal Type</CardTitle>
-                    <CardText>Fruits & Veggies: # servings</CardText>
-                    <CardText>Protein: # servings</CardText>
-                    <CardText>Grains: # servings</CardText>
-                    <CardText>Sweets: # servings</CardText>
+                <CardTitle>Meal Type: {props.mealType}</CardTitle>
+                    <CardText>Fruits & Veggies: {props.fruistVeg} servings:</CardText>
+                    <CardText>Protein: {props.protein} servings</CardText>
+                    <CardText>Grains: {props.grains} servings</CardText>
+                    <CardText>Sweets: {props.sweets} servings</CardText>
                     <Button className='cardBtn'>Edit</Button>
                     <Button className='cardBtn'>Delete</Button>
                 </CardBody>
-                <CardFooter>Meal Score</CardFooter>
+                <CardFooter>Meal Score: {props.mealScore}</CardFooter>
             </Card>
         </div>
     )

@@ -16,16 +16,16 @@ function App() {
 
   const [pets, setPets] = useState();
 
-  useEffect (() => {
+//   useEffect (() => {
         
-    axiosWithAuth()
-    .get('/pets/')
-    .then(res => {
-        console.log(res.data)
-        // setPet state to res.data
-    })
-    .catch(err => console.log('Cannot fetch pets', err))
-}, [])
+//     axiosWithAuth()
+//     .get('/pets/')
+//     .then(res => {
+//         console.log(res.data)
+//         // setPet state to res.data
+//     })
+//     .catch(err => console.log('Cannot fetch pets', err))
+// }, [])
 
   return (
     <Router>

@@ -12,29 +12,6 @@ background: #6C46A2;
 display: flex;
 `;
 
-let HeaderInnerContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-around;
-margin: 0 auto;
-max-width: 1440px;
-width: 100%;
-color: white;
-`;
-
-let Span = styled.span`
-color: white;
-font-size: 1.4rem;
-font-family: Hind Madurai;
-text-decoration: none;
-`;
-
-let Nav = styled.nav`
-width: 20%;
-display: flex;
-justify-content: space-between;
-`;
-
 let Input = styled.input`
 /* background: red; */
 /* border-radius: 25px; */
