@@ -72,19 +72,19 @@ const MealCard = props => {
                         <Form onSubmit={editMeal}>
                             <FormGroup>
                                 <Label for="fruitsVeg">Fruits & Veggies</Label>
-                                <Input type="text" name="fruitsVeg" id="fruitsVeg" placeholder="# of Servings" />
+                                <Input type="text" name="fruitsVeg" id="fruitsVeg" placeholder="# of Servings" onChange={changeHandler} value={meal.fruitsVeg}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="protein">Protein</Label>
-                                <Input type="text" name="protein" id="protein" placeholder="# of Servings" />
+                                <Input type="text" name="protein" id="protein" placeholder="# of Servings" onChange={changeHandler}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="grains">Password</Label>
-                                <Input type="text" name="grains" id="grains" placeholder="# of Servings" />
+                                <Input type="text" name="grains" id="grains" placeholder="# of Servings" onChange={changeHandler}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="sweets">Password</Label>
-                                <Input type="text" name="sweets" id="sweets" placeholder="# of Servings" />
+                                <Input type="text" name="sweets" id="sweets" placeholder="# of Servings" onChange={changeHandler}/>
                             </FormGroup>
                             <Button color="primary" onClick={toggle}>Update</Button>{' '}
                             <Button color="secondary" onClick={toggle}>Cancel</Button>
