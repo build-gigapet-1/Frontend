@@ -41,15 +41,16 @@ const AddMeal = props => {
         })
     }
     const addMeal = e => {
-        //e.preventDefault();
-        console.log(mealContents)
+
       axiosWithAuth()
             .post(`/pets/${mealContents.petId}/meals`, mealContents)
             .then(res => {
-                console.log(res.data);
+                console.log(res)
             }).catch(err => console.log(err));
+      
+     }
 
-    }
+   
 
     return(
 
