@@ -38,7 +38,7 @@ const MealCard = props => {
     return (
         <div className='mealCard'>
             <Card body outline color ='secondary'>
-                <CardHeader>Date</CardHeader>
+                <CardHeader>{props.date}</CardHeader>
                 <CardBody>
                 <CardTitle>Meal Type: {props.mealType}</CardTitle>
                     <CardText>Fruits & Veggies: {props.fruitsVeg} servings:</CardText>
