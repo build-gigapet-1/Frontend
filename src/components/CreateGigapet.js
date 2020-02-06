@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import NavBarDashboard from './NavBarDashboard';
 import {useForm} from 'react-hook-form';
 import styled from 'styled-components';
@@ -15,7 +15,7 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
+  // CarouselCaption
 } from 'reactstrap';
 import axiosWithAuth from '../utils/AxiosWithAuth';
 
@@ -58,9 +58,9 @@ const items = [
   }
 ];
 
-let Body = styled.body`
-box-sizing: border-box;
-`;
+// let Body = styled.body`
+// box-sizing: border-box;
+// `;
 
 let Header = styled.header`
 height: 120px;

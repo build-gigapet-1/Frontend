@@ -16,22 +16,22 @@ function App() {
 
   const [pets, setPets] = useState();
 
-  useEffect (() => {
+//   useEffect (() => {
         
-    axiosWithAuth()
-    .get('/pets/')
-    .then(res => {
-        console.log(res.data)
-        // setPet state to res.data
-    })
-    .catch(err => console.log('Cannot fetch pets', err))
-}, [])
+//     axiosWithAuth()
+//     .get('/pets/')
+//     .then(res => {
+//         console.log(res.data)
+//         // setPet state to res.data
+//     })
+//     .catch(err => console.log('Cannot fetch pets', err))
+// }, [])
 
   return (
     <Router>
       <div className="App">
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/login" component={Login} data={setUserID}/>
+        <Route exact path="/login" component={Login}/>
         <Route exact path="/registration" component={Registration} />
         <PrivateRoute exact path='/creategigapet' component={CreateGigapet} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
