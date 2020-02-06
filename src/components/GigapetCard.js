@@ -17,7 +17,7 @@ const GigapetCard = (props) => {
             <p className="lead">Let's see how your Gigapet is doing today...</p>
             <hr className="my-2" />
             <h4>Gigapet Score:</h4>
-            <h4>100</h4>
+            <h4>{props.petScore}</h4>
             <hr className="my-2" />
             <p className="lead">
           < Button color="success" type='submit' onClick={feedMe}>Feed Me</Button>

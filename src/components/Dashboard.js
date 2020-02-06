@@ -10,10 +10,10 @@ const Dashboard = props => {
     useEffect (() => {
         console.log(props)
         axiosWithAuth()
-        .get('/pets/')
+        .get(`/pets/`)
         .then(res => {
             console.log(res.data)
-            // setPet state to res.data
+            setPets(res.data)
         })
         .catch(err => console.log('Cannot fetch pets', err))
     }, [])
@@ -26,7 +26,13 @@ const Dashboard = props => {
         <div className='dashboard'>
             <NavBarDashboard />
             <Button className='addPetBtn' onClick={onClick} color="success">Add a new Gigapet</Button>
-            <GigapetCard />
+            {/* {pets.map(pet => (
+                <GigapetCard
+                 key={pet.id}
+                 petName={pet.petName}
+                />
+            ))} */}
+            
         </div>
         
     )
