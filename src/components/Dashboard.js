@@ -33,6 +33,7 @@ const Dashboard = props => {
                     petName={pet.petName}
                     petScore={pet.petScore}
                     petImgSet={pet.petImgSet}
+                    petId={pet.petId}
                     />
             ))}
             </div>

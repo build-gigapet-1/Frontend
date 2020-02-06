@@ -61,6 +61,7 @@ const MealList = props => {
                     grains = {meal.grains}
                     sweets = {meal.sweets}
                     mealScore = {meal.mealScore}
+                    petId = {meal.petId}
                     />
                 )) }
             </div>
