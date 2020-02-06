@@ -90,6 +90,12 @@ div.collapse.show.navbar-collapse {
 
 .dashboard .addPetBtn {
   position: absolute;
+  right: 250px;
+  margin-top: 20px;
+}
+
+.dashboard .addMealBtn {
+  position: absolute;
   right: 75px;
   margin-top: 20px;
 }
