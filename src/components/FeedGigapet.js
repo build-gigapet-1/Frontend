@@ -22,7 +22,7 @@ const FeedGigapet = props => {
         axiosWithAuth()
                 .get(`/pets/${petId}`)
                 .then(res => {
-                    console.log(res)
+                    console.log('data ', res.data)
                     setMeals(res.data.meals);
                     setData(res.data)
 
@@ -56,7 +56,7 @@ const FeedGigapet = props => {
             <div className='gigapets'>
             { meals.map(pet => (
                 
-                    <FeedGigapetCard name="petId" value={pet} />
+                    <FeedGigapetCard name="petId" value={pet}  data={data}/>
                 ))}
             </div>
             

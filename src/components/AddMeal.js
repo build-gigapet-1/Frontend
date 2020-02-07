@@ -24,6 +24,11 @@ const AddMeal = props => {
     })
     const { register, handleSubmit, errors } = useForm(); 
 
+    //recommended servings for 4-8 year olds. Each serving is a half a cup
+    const recommendedServings = {
+        
+    }
+
     useEffect(() => {
         axiosWithAuth()
             .get('/pets/')
