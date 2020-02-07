@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
+    CardTitle, CardText, Modal, ModalHeader, ModalBody} from 'reactstrap';
 import axiosWithAuth from '../utils/AxiosWithAuth';
 
 
 const FeedGigapetCard = (props) => {
 
-    const data = props.data
+    const data = props.value
     const petName = 'petName'
     const petScore = 'petScore'
     const petImgSet = 'petImgSet'
@@ -35,14 +35,20 @@ const FeedGigapetCard = (props) => {
                         [petScore]: e.target.value,
                         [petImgSet]: e.target.id})
         
-        console.log(data)
-        
         toggle();
         console.log(gigapet)
         
     }
 
     const handleFeed = () =>{
+
+        axiosWithAuth()
+        .put(`/pets/${data.petId}/meals/${data.mealId}`, gigapet)
+        .then(res => {
+            console.log('updated data', res)
+            window.location.reload()
+        })
+        .catch(err => console.log('Cannot update', err))
 
         console.log(gigapet)
     }
