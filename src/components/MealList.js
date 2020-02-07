@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import MealCard from './MealCard';
 import NavBarDashboard from './NavBarDashboard';
-// import { Container, Row } from "reactstrap";
-// import styled from "styled-components";
 import axiosWithAuth from '../utils/AxiosWithAuth'
 
 
@@ -45,6 +44,10 @@ const MealList = props => {
         }
     }
 
+    const reset = e => {
+        window.location.href='/meals'
+    }
+
     
 
     return (
@@ -59,6 +62,31 @@ const MealList = props => {
                         <option value='Lunch'>Lunch</option>
                         <option value='Dinner'>Dinner</option>
                     </select>
+                    <Button className='resetBtn' onClick={reset} color='success'>Reset</Button>
+                    {/* <Form className='mealFilter'>
+                        <FormGroup tag="fieldset" onChange={filterMeals}>
+                            <legend>Filter Meals</legend>
+                            <FormGroup check>
+                                <Label check>
+                                    <Input type="checkbox" name="Breakfast" value="Breakfast" />{' '}
+                                    Breakfast
+                                </Label>
+                            </FormGroup>
+                            <FormGroup check>
+                                <Label check>
+                                    <Input type="checkbox" name="Lunch" value='Lunch' />{' '}
+                                    Lunch
+                                </Label>
+                            </FormGroup>
+                            <FormGroup check>
+                                <Label check>
+                                    <Input type="checkbox" name="Dinner" value='Dinner' />{' '}
+                                    Dinner
+                                </Label>
+                            </FormGroup>
+                        </FormGroup>
+                        <Button onSubmit={reset} color='success'>Reset</Button>
+                    </Form> */}
                 </div>
                 <div className='mealsColumn'>
                     <h2>Which gigapets meals do you want to view?</h2>
