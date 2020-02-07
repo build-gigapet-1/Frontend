@@ -18,7 +18,7 @@ import formbg from '../images/homepage/formbg.png';
 let Body = styled(Card)`
 background-image: url(${bg});
 background-size: cover;
-height: 90vh;
+border: none;
 @media ( max-width: 760px) {
 /* background-image: url(${bg2}); */
 background-image: none;
@@ -131,7 +131,7 @@ const AddMeal = props => {
 
         <div className="mealForm">
         <NavBarDashboard/>
-            <Body body outline color ='secondary'>
+            <Body>
                 <CardBody>
                     <h1 className='add-h1'> Add a Meal</h1>
                     <form onSubmit={handleSubmit(addMeal)} className="form">
