@@ -39,7 +39,8 @@ const MealList = props => {
     const filterMeals = e => {
         console.log(props, e.target.value)
         if (props.mealType === e.target.value) {
-            
+            setMeals(props)
+            console.log(meals)
         }
     }
 
