@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 2% 5%;
 }
 /* nav styles */
+.navContainer {
+  width: 100%;
+}
+
 nav, .dashNav {
   background-color: #6C46A2;
   font-family: 'Patua One', cursive;
