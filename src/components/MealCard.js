@@ -1,19 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
 import { Card, Button, CardHeader, CardFooter, CardBody,
     CardTitle, CardText, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import axiosWithAuth from '../utils/AxiosWithAuth';
 
 const MealCard = props => {
     // Modal
-    const {
-        buttonLabel,
-        className
-      } = props;
+    const {className} = props;
 
-    
     const [modal, setModal] = useState(false);
-
     
     const toggle = () => setModal(!modal);
     // meal state
@@ -25,7 +19,6 @@ const MealCard = props => {
     }
 
     const [meal, setMeal] = useState(initialMeal);
-    const {id} = useParams();
     console.log('this is props', props)
 
     useEffect(() => {

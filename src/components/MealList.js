@@ -10,37 +10,38 @@ const MealList = props => {
     const [meals, setMeals] = useState([]);
     const [pets,setPets] = useState([])
     const [petsId, setPetsId] = useState([])
+    
     useEffect(() =>{
-
         axiosWithAuth()
                 .get('/pets/')
                 .then(res => {
                     setPets(res.data);
-                    setPetsId(res.data.petId)
-                    console.log('my pet id', petsId)
         })
         .catch(err => console.log('Cannot fetch pets', err))
-      
-       
     }, []);
 
     const getMeals= e => {
+        // setPetsId(e.target.value)
+        
         axiosWithAuth()
             .get(`/pets/${e.target.value}`)
             .then(res => {
             console.log(res);
+            console.log('my pet id', res.data.petId)
+            setPetsId(res.data.petId)
+            console.log('pet id', petsId)
             setMeals(res.data.meals);
-            
         }).catch(error => {
             console.log('no meal found', error);
         })
     }
 
     const filterMeals = e => {
-        console.log(props, e.target.value)
-        if (props.mealType === e.target.value) {
-            setMeals(props)
-            console.log(meals)
+        console.log(meals, e.target.value)
+        const newMeals = meals.filter(meal => `${meal.mealType}` === e.target.value);
+        console.log(newMeals)
+        if (newMeals) {
+            setMeals(newMeals)
         }
     }
 
