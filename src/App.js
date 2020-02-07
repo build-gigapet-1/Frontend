@@ -22,7 +22,7 @@ function App() {
       
      const gigapetId = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
      axiosWithAuth()
-     .get(`/pets/${gigapetId}`)
+     .get(`/pets/`)
      .then(res => {
        console.log(res.data);
        setPets(res.data);

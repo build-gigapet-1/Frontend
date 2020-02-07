@@ -9,13 +9,15 @@ import axiosWithAuth from '../utils/AxiosWithAuth'
 const MealList = props => {
     const [meals, setMeals] = useState([]);
     const [pets,setPets] = useState([])
-    
+    const [petsId, setPetsId] = useState([])
     useEffect(() =>{
 
         axiosWithAuth()
                 .get('/pets/')
                 .then(res => {
                     setPets(res.data);
+                    setPetsId(res.data.petId)
+                    console.log('my pet id', petsId)
         })
         .catch(err => console.log('Cannot fetch pets', err))
       
@@ -35,10 +37,9 @@ const MealList = props => {
     }
 
     const filterMeals = e => {
-        const currentPet = props.petId;
-        console.log('current pet id', currentPet)
+        console.log(props, e.target.value)
         if (props.mealType === e.target.value) {
-
+            
         }
     }
 
