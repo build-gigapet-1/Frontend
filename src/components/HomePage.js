@@ -21,6 +21,14 @@ background-image: url(${bg});
 background-size: cover;
 background-repeat: no-repeat;
 height: 100vh;
+
+@media (max-width: 512px) {
+  /* height: 100vh; */
+  /* height:100%; */
+  margin: 0;
+  padding: 0;
+}
+
 `;
 
 let Header = styled.header`
@@ -36,6 +44,11 @@ text-align: center;
 width: 100%;
 padding-top: 5%;
 position: relative;
+
+@media ( max-width: 512px ) {
+  display: flex;
+  flex-direction: column;
+}
 `;
 
 let ImgTitleCont = styled.div`
@@ -44,6 +57,11 @@ flex-direction: column;
 align-items: center;
 width: 100%;
 padding-left: 150px;
+
+@media ( max-width: 512px ) {
+  padding: 0;
+  flex-direction: column-reverse;
+}
 `;
 
 let Img6Cont = styled.div`
@@ -96,8 +114,9 @@ box-shadow: 1px 1px 3px black;
 
 @media (max-width: 1026px) {
   width: 100%;
-  height: 50px;
+  height: 40px;
   margin-right: 0;
+  font-size: 1.2rem;
 }
 `;
 
@@ -114,7 +133,6 @@ width: 80%;
 padding: 30px 0;
 display: flex;
 flex-direction: column;
-/* justify-content: space-between; */
 margin: auto 0;
 margin-bottom: 17%;
 align-content: center;
@@ -124,6 +142,11 @@ align-content: center;
   flex-direction: column;
   align-items: center;
   } */
+
+  @media ( max-width: 512px ) {
+    width: 100%;
+    align-items: center;
+}
 `;
 
 
