@@ -13,7 +13,8 @@ import crocodile from '../images/omgomg.png';
 
 const GigapetCard = (props) => {
     const feedMe = e => {
-        window.location.href='/feedgigapet';
+        console.log(props)
+        window.location.href=`/feedgigapet/${e.target.value}`;
     }
 
     const gigapetImg = () => {
@@ -43,7 +44,7 @@ const GigapetCard = (props) => {
             <h4>{props.petScore}</h4>
             <hr className="my-2" />
             <p className="lead">
-          < Button color="success" type='submit' onClick={feedMe}>Feed Me</Button>
+            <Button color="success"  value={props.petId} type='submit' onClick={feedMe}>Feed Me</Button>
             </p>
         </Jumbotron>
         </div>

@@ -19,9 +19,10 @@ function App() {
 
 
    useEffect (() => {
-        
+      
+     const gigapetId = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
      axiosWithAuth()
-     .get('/pets/')
+     .get(`/pets/${gigapetId}`)
      .then(res => {
        console.log(res.data);
        setPets(res.data);
@@ -48,7 +49,7 @@ function App() {
          render={(props) => < MealList {...props} pets={pets}/>}
         />
         <PrivateRoute exact path="/addmeal" component={AddMeal} />
-        <PrivateRoute exact path='/feedgigapet' component={Feedgigapet} />
+        <PrivateRoute exact path='/feedgigapet/:id' component={Feedgigapet} />
       </div>
     </Router>
     

@@ -10,8 +10,10 @@ const MealCard = props => {
         buttonLabel,
         className
       } = props;
+
     
     const [modal, setModal] = useState(false);
+
     
     const toggle = () => setModal(!modal);
     // meal state
