@@ -6,6 +6,11 @@ const NavBarDashboard = props => {
     const [collapsed, setCollapsed] = useState(true);
 
     const toggleNavbar = () => setCollapsed(!collapsed);
+
+    const clearToken = () => {
+        localStorage.clear();
+        window.location.href='/'
+    }
     
     return (
         <div className='navContainer'>
@@ -28,7 +33,7 @@ const NavBarDashboard = props => {
                         <NavLink href="https://kkslider2130.github.io/Gigapet-Marketing-proto/team.html">Our Team</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Sign Out</NavLink>
+                        <NavLink onClick={clearToken}>Sign Out</NavLink>
                     </NavItem>
                 </div>
             </Nav>
