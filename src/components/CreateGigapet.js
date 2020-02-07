@@ -107,7 +107,7 @@ function CreateGigapet(props) {
     const history = useHistory();
   const [gigapet,setGigapet] =useState({
     petName: null,
-    petScore: '9',
+    petScore: '0',
     petImgSet: 'Gorilla'
 
   })
