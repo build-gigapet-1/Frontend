@@ -297,11 +297,7 @@ div.collapse.show.navbar-collapse {
   opacity: 1;
 }
 
-@media (max-width: 512px) {
-  .overlay-cont {
-    /* background-color: rgba(0, 0, 0, 0.144); */
-    /* width: 100px; */
-  }
+@media (max-width: 500px) {
   .overlay1 {
     width: 40%;
     margin: 0;
@@ -310,4 +306,13 @@ div.collapse.show.navbar-collapse {
     background-color: rgba(0, 0, 0, 0.244);
     border-radius: 25px;
   }
+  
+  .h2title{
+    font-size: 1.4rem;
+  }
+
+  .h3subtitle{
+    font-size: 1.1rem;
+  }
+
 }

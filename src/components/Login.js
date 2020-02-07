@@ -4,17 +4,23 @@ import {useForm} from 'react-hook-form';
 import styled from "styled-components";
 import axiosWithAuth from '../utils/AxiosWithAuth';
 import NavBar from "./NavBar";
+import loginbg from '../images/homepage/loginregistercopy.png'
 
 //==============================Styled Components===========================
 let Header = styled.header`
 height: 120px;
 background: #6C46A2;
-display: flex;
+`;
+
+let Body = styled.div`
+box-sizing: border-box;
+background-image: url(${loginbg});
+background-size: cover;
+background-repeat: no-repeat;
+height: 100vh;
 `;
 
 let Input = styled.input`
-/* background: red; */
-/* border-radius: 25px; */
 font-size: 1.7rem;
 padding: 10px 30px;
 border: 2px solid black;
@@ -90,6 +96,9 @@ text-decoration: none;
 width: 50%;
 `;
 
+// ************************ Styled Components End ***************************
+
+
 const Login = props => {
     const { register, errors } = useForm(); 
     const history = useHistory();
@@ -121,11 +130,11 @@ const Login = props => {
 
     }
     return (
-      <div>
+      <Body>
         <Header>
             <NavBar/>
         </Header>
-          <div>
+          <div className='login-bg'>
             <br/>
             <h1>Login</h1>
             <br/>
@@ -163,7 +172,7 @@ const Login = props => {
               <Links to="/" style={{textDecoration: 'none'}}><Buttons2>Go Back Home</Buttons2></Links>
             </ButtonContainer>
           </div>
-      </div>
+      </Body>
       
     );
   }

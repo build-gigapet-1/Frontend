@@ -4,16 +4,29 @@ import {useForm} from 'react-hook-form';
 import styled from "styled-components"
 import axiosWithAuth from '../utils/AxiosWithAuth';
 import NavBar from "./NavBar";
+import loginbg from '../images/homepage/loginregistercopy.png'
 
 //==============================Styled Components===========================
 let Header = styled.header`
-height: 120px;
+/* height: 120px; */
 background: #6C46A2;
-display: flex;
+`;
+
+let MainBody = styled.div`
+height: 100vh;
+`;
+
+let Body = styled.div`
+background-image: url(${loginbg});
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+height: 91.8%;
+/* height: inherit; */
 `;
 
 let Input = styled.input`
-/* background: red; */
+background: white;
 /* border-radius: 25px; */
 width: 100%;
 font-size: 1.7rem;
@@ -91,6 +104,9 @@ width: 50%;
 text-decoration: none;
 `;
 
+// ************************ Styled Components End ***************************
+
+
 function Registration() {
     const { register, handleSubmit, errors } = useForm(); 
     const history = useHistory();
@@ -106,11 +122,11 @@ function Registration() {
     }
   
     return (
-      <div>
+      <MainBody className='main-body'>
         <Header>
           <NavBar/>
         </Header>
-          <div>
+          <Body>
           <br/>
             <h1>Registration</h1>
           <br/>
@@ -153,8 +169,8 @@ function Registration() {
             <ButtonContainer>
               <Links to="/" style={{textDecoration: 'none'}}><Buttons2>Go Back Home</Buttons2></Links>
             </ButtonContainer>
-          </div>
-      </div>
+          </Body>
+      </MainBody>
       
     );
   }

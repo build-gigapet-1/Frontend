@@ -22,7 +22,7 @@ background-size: cover;
 background-repeat: no-repeat;
 height: 100vh;
 
-@media (max-width: 512px) {
+@media (max-width: 500px) {
   /* height: 100vh; */
   /* height:100%; */
   margin: 0;
@@ -34,7 +34,6 @@ height: 100vh;
 let Header = styled.header`
 height: 120px;
 background: #6C46A2;
-display: flex;
 `;
 
 let Section = styled.section`
@@ -45,7 +44,7 @@ width: 100%;
 padding-top: 5%;
 position: relative;
 
-@media ( max-width: 512px ) {
+@media ( max-width: 500px ) {
   display: flex;
   flex-direction: column;
 }
@@ -58,7 +57,7 @@ align-items: center;
 width: 100%;
 padding-left: 150px;
 
-@media ( max-width: 512px ) {
+@media ( max-width: 500px ) {
   padding: 0;
   flex-direction: column-reverse;
 }
@@ -92,6 +91,10 @@ color: rgba(255,163,128);
 @media (max-width: 1024px) {
   width: 90%;
 }
+
+@media (max-width: 500px) {
+  width: 75%;
+}
 `;
 
 let Buttons = styled.button`
@@ -112,7 +115,7 @@ box-shadow: 1px 1px 3px black;
   box-shadow: 1px 1px 5px black;
 }
 
-@media (max-width: 1026px) {
+@media (max-width: 1024px) {
   width: 100%;
   height: 40px;
   margin-right: 0;
@@ -124,7 +127,6 @@ let Links = styled(Link)`
   text-decoration:none;
   display: flex;
   justify-content: center;
-  /* width: 250px; */
   width: 40%;
 `;
 
@@ -143,7 +145,7 @@ align-content: center;
   align-items: center;
   } */
 
-  @media ( max-width: 512px ) {
+  @media ( max-width: 500px ) {
     width: 100%;
     align-items: center;
 }
