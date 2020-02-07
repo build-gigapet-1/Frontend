@@ -23,8 +23,6 @@ background-repeat: no-repeat;
 height: 100vh;
 
 @media (max-width: 500px) {
-  /* height: 100vh; */
-  /* height:100%; */
   margin: 0;
   padding: 0;
 }
@@ -138,13 +136,6 @@ flex-direction: column;
 margin: auto 0;
 margin-bottom: 17%;
 align-content: center;
-/* @media (max-width: 1024px) {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  } */
-
   @media ( max-width: 500px ) {
     width: 100%;
     align-items: center;
