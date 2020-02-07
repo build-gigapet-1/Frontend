@@ -11,6 +11,7 @@ import MealList from './components/MealList';
 import Dashboard from './components/Dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 import CreateGigapet from './components/CreateGigapet';
+import Feedgigapet from './components/FeedGigapet';
 
 function App() {
 
@@ -18,9 +19,10 @@ function App() {
 
 
    useEffect (() => {
-        
+      
+     const gigapetId = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
      axiosWithAuth()
-     .get('/pets/')
+     .get(`/pets/${gigapetId}`)
      .then(res => {
        console.log(res.data);
        setPets(res.data);
@@ -47,6 +49,7 @@ function App() {
          render={(props) => < MealList {...props} pets={pets}/>}
         />
         <PrivateRoute exact path="/addmeal" component={AddMeal} />
+        <PrivateRoute exact path='/feedgigapet/:id' component={Feedgigapet} />
       </div>
     </Router>
     

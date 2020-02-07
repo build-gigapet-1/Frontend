@@ -22,10 +22,15 @@ const Dashboard = props => {
         window.location.href='/creategigapet'
     }
 
+    const onClick2 = e => {
+        window.location.href='/addmeal'
+    }
+
     return (
         <div className='dashboard'>
             <NavBarDashboard />
             <Button className='addPetBtn' onClick={onClick} color="success">Add a new Gigapet</Button>
+            <Button className='addMealBtn' onClick={onClick2} color="success">Add a new Meal</Button>
             <div className='gigapets'>
                 {pets.map(pet => (
                     <GigapetCard
@@ -33,6 +38,7 @@ const Dashboard = props => {
                     petName={pet.petName}
                     petScore={pet.petScore}
                     petImgSet={pet.petImgSet}
+                    petId={pet.petId}
                     />
             ))}
             </div>

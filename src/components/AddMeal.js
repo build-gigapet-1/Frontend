@@ -29,6 +29,7 @@ const AddMeal = props => {
             .get('/pets/')
             .then(res => {
                 setPets(res.data);
+                console.log(res.data[0].petId)
      })
      .catch(err => console.log('Cannot fetch pets', err))
 
@@ -46,11 +47,13 @@ const AddMeal = props => {
             .post(`/pets/${mealContents.petId}/meals`, mealContents)
             .then(res => {
                 console.log(res)
+                window.location.href='/dashboard'
             }).catch(err => console.log(err));
+            
       
      }
 
-   
+     //Add a calculate meal score function
 
     return(
 
@@ -63,6 +66,7 @@ const AddMeal = props => {
 
                 <CardTitle>Which gigapet do you want to add a meal for?</CardTitle>
                 <select name="petId" onChange={handleChange}>
+                    <option>Select Pet</option>
                 { pets.map(pet => (
                     <option name="petId" value={pet.petId}> {pet.petName} </option>
                 ))}
