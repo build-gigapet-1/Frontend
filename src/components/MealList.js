@@ -55,38 +55,38 @@ const MealList = props => {
             <NavBarDashboard />
             <div className='mealsContainer'>
                 <div className='sortColumn'>
-                    <h3>Filter meals</h3>
+                    {/* <h3>Filter meals</h3>
                     <select name='mealType' onChange={filterMeals}>
                         <option>Meal Type</option>
                         <option value='Breakfast'>Breakfast</option>
                         <option value='Lunch'>Lunch</option>
                         <option value='Dinner'>Dinner</option>
                     </select>
-                    <Button className='resetBtn' onClick={reset} color='success'>Reset</Button>
-                    {/* <Form className='mealFilter'>
+                    <Button className='resetBtn' onClick={reset} color='success'>Reset</Button> */}
+                    <Form className='mealFilter'>
                         <FormGroup tag="fieldset" onChange={filterMeals}>
                             <legend>Filter Meals</legend>
                             <FormGroup check>
                                 <Label check>
-                                    <Input type="checkbox" name="Breakfast" value="Breakfast" />{' '}
+                                    <Input type="radio" name="mealType" value="Breakfast" />{' '}
                                     Breakfast
                                 </Label>
                             </FormGroup>
                             <FormGroup check>
                                 <Label check>
-                                    <Input type="checkbox" name="Lunch" value='Lunch' />{' '}
+                                    <Input type="radio" name="mealType" value='Lunch' />{' '}
                                     Lunch
                                 </Label>
                             </FormGroup>
                             <FormGroup check>
                                 <Label check>
-                                    <Input type="checkbox" name="Dinner" value='Dinner' />{' '}
+                                    <Input type="radio" name="mealType" value='Dinner' />{' '}
                                     Dinner
                                 </Label>
                             </FormGroup>
                         </FormGroup>
                         <Button onSubmit={reset} color='success'>Reset</Button>
-                    </Form> */}
+                    </Form>
                 </div>
                 <div className='mealsColumn'>
                     <h2>Which gigapets meals do you want to view?</h2>

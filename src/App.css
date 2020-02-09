@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sortColumn {
   width: 20%;
-  margin-left: 2%;
+  margin-left: 5%;
 }
 
 .sortColumn select {
@@ -54,6 +54,14 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 1% 4%;
+}
+
+.mealFilter {
+  text-align: left;
+}
+
+.mealFilter legend {
+  font-family: 'Patua One', cursive;
 }
 
 /* meal card styles */

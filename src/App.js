@@ -15,8 +15,8 @@ import Feedgigapet from './components/FeedGigapet';
 
 function App() {
 
-  const [pets, setPets] = useState();
-
+  const [pets, setPets] = useState([]);
+  const [petsId, setPetsId] = useState([]);
 
    useEffect (() => {
       
