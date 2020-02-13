@@ -181,6 +181,10 @@ div.collapse.show.navbar-collapse {
   width: 400px;
 }
 
+.smallBtn {
+  margin: 2% 2% 0%;
+}
+
 /* Media queries */
 @media (max-width: 500px) {
   .navContainer {

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Jumbotron, Button } from 'reactstrap';
-import avatar from '../images/Group 17.png';
+import axiosWithAuth from '../utils/AxiosWithAuth';
 
 // image imports
 import deer from '../images/deer.png';
@@ -33,6 +33,15 @@ const GigapetCard = (props) => {
         }
     }
 
+    const deletePet = e => {
+        axiosWithAuth()
+        .delete(`/pets/${props.petId}`)
+        .then(res => {
+            window.location.reload()
+        })
+        .catch(err => console.log('Cannot delete', err))
+    }
+
     return (
         <div className='gigapetCard'>
         <Jumbotron>
@@ -44,8 +53,10 @@ const GigapetCard = (props) => {
             <h4>{props.petScore}</h4>
             <hr className="my-2" />
             <p className="lead">
-            <Button color="success"  value={props.petId} type='submit' onClick={feedMe}>Feed Me</Button>
+                <Button color="success"  value={props.petId} type='submit' onClick={feedMe}>Feed Me</Button>
             </p>
+            <Button className='smallBtn' color="info" size="sm">Edit Gigapet</Button>{' '}
+            <Button className='smallBtn' color="danger" size="sm" onClick={deletePet}>Delete Gigapet</Button>
         </Jumbotron>
         </div>
     );
