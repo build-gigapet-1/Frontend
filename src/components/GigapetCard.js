@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { Jumbotron, Button } from 'reactstrap';
-import avatar from '../images/Group 17.png';
+import { Jumbotron, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
+import axiosWithAuth from '../utils/AxiosWithAuth';
 
 // image imports
 import deer from '../images/deer.png';
@@ -12,6 +12,20 @@ import crocodile from '../images/omgomg.png';
 
 
 const GigapetCard = (props) => {
+    const initialPet = {
+        petName: null,
+        petScore: '0',
+        petImgSet: null
+    }
+
+    const [pet, setPet] = useState(initialPet)
+
+    const {className} = props;
+
+    const [modal, setModal] = useState(false);
+    
+    const toggle = () => setModal(!modal);
+
     const feedMe = e => {
         console.log(props)
         window.location.href=`/feedgigapet/${e.target.value}`;
@@ -33,6 +47,43 @@ const GigapetCard = (props) => {
         }
     }
 
+    useEffect(() => {
+        const petToEdit = props
+        if (petToEdit) {
+            setPet(petToEdit)
+        }
+    }, [props])
+
+    const changeHandler = e => {
+        setPet({
+            ...pet,
+            [e.target.name]: e.target.value
+        });
+
+    }
+
+    // edit meal function with axios.put
+    const editPet = e => {
+        e.preventDefault()
+        axiosWithAuth()
+        .put(`/pets/${props.petId}`, pet)
+        .then(res => {
+            console.log('updated data', res)
+            window.location.reload()
+        })
+        .catch(err => console.log('Cannot update', err))
+    }
+
+
+    const deletePet = e => {
+        axiosWithAuth()
+        .delete(`/pets/${props.petId}`)
+        .then(res => {
+            window.location.reload()
+        })
+        .catch(err => console.log('Cannot delete', err))
+    }
+
     return (
         <div className='gigapetCard'>
         <Jumbotron>
@@ -44,8 +95,38 @@ const GigapetCard = (props) => {
             <h4>{props.petScore}</h4>
             <hr className="my-2" />
             <p className="lead">
-            <Button color="success"  value={props.petId} type='submit' onClick={feedMe}>Feed Me</Button>
+                <Button color="success"  value={props.petId} type='submit' onClick={feedMe}>Feed Me</Button>
             </p>
+            <Button className='smallBtn' color="info" size="sm" onClick={toggle}>Edit Gigapet</Button>{' '}
+                <Modal isOpen={modal} toggle={toggle} className={className}>
+                    <ModalHeader toggle={toggle}>Edit Meal</ModalHeader>
+                        <ModalBody>
+                        <Form onSubmit={editPet}>
+                            <Label for="mealType">Meal Type</Label>
+                            <Input type="select" name="petImgSet" id="petImgSet" onChange={changeHandler}>
+                                <option value={props.petImgSet}>{props.petImgSet}</option>
+                                <option value='Crocodile'>Crocodile</option>
+                                <option value='Deer'>Deer</option>
+                                <option value='Gorilla'>Gorilla</option>
+                                <option value='Parrot'>Parrot</option>
+                                <option value='Shark'>Shark</option>
+                                <option value='Snake'>Snake</option>
+                            </Input>
+                            <FormGroup>
+                                <Label for="petName">Pet Name</Label>
+                                <Input type="text" name="petName" id="petName" onChange={changeHandler} value={props.petName}/>
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="petScore">Pet Score</Label>
+                                <Input disabled type="text" name="petScore" id="petScore" onChange={changeHandler} value={props.petScore}/>
+                            </FormGroup>
+                            <Button color="primary" onClick={editPet}>Update</Button>{' '}
+                            <Button color="secondary" onClick={toggle}>Cancel</Button>
+                    </Form>
+                </ModalBody>
+            </Modal>
+                    
+            <Button className='smallBtn' color="danger" size="sm" onClick={deletePet}>Delete Gigapet</Button>
         </Jumbotron>
         </div>
     );

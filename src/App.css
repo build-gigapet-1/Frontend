@@ -29,7 +29,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .sortColumn {
   width: 20%;
-  margin-left: 2%;
+  margin-left: 5%;
+}
+
+.sortColumn select {
+  width: 150px;
+  height: 25px;
+}
+
+.resetBtn {
+  margin-left: 6%;
 }
 
 .mealsColumn {
@@ -47,6 +56,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1% 4%;
 }
 
+.mealFilter {
+  text-align: left;
+}
+
+.mealFilter legend {
+  font-family: 'Patua One', cursive;
+}
+
 /* meal card styles */
 .mealCard {
   width: 375px;
@@ -57,6 +74,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 75px;
   margin: 2% 5%;
 }
+
 /* nav styles */
 .navContainer {
   width: 100%;
@@ -161,6 +179,10 @@ div.collapse.show.navbar-collapse {
 
 .my-2 {
   width: 400px;
+}
+
+.smallBtn {
+  margin: 2% 2% 0%;
 }
 
 /* Media queries */
